@@ -33,6 +33,7 @@ import { RegistrarseComponent } from '../app/Inicio/NavBar/registrarse/registrar
     NgbAlertModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [RegistrarseComponent]
 })
 export class AppModule { }
