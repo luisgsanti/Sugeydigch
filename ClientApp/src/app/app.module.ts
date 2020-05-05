@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { RegistrarseComponent } from '../app/Inicio/NavBar/registrarse/registrarse.component';
+import { RecepcionistaComponent } from './recepcionista/recepcionista.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RegistrarseComponent } from '../app/Inicio/NavBar/registrarse/registrar
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    RegistrarseComponent
+    RegistrarseComponent,
+    RecepcionistaComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

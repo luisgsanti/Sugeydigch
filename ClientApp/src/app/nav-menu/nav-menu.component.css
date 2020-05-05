@@ -4,7 +4,7 @@ a.navbar-brand {
   word-break: break-all;
   color: white;
   font-family: Garamond;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 button{
@@ -17,13 +17,11 @@ button{
   height: 40px;
 }
 
-.login{
-}
-
 
 html {
   font-size: 14px;
 }
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
