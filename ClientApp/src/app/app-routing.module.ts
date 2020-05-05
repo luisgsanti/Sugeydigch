@@ -8,11 +8,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { RegistrarseComponent } from '../app/Inicio/NavBar/registrarse/registrarse.component';
 import { HomeComponent } from '../app/home/home.component';
 import { RecepcionistaComponent } from '../app/recepcionista/recepcionista.component'
+import { ReservaComponent } from '../app/reserva/reserva.component'
 
 const routes: Routes = [
 
   { path: '', component:  HomeComponent, pathMatch: 'full' },
-  { path:'Recepcionista', component:RecepcionistaComponent  }
+  { path:'Recepcionista', component:RecepcionistaComponent  },
+  { path:'Reserva', component:ReservaComponent  }
 
 ];
 
