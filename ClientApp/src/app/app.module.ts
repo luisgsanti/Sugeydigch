@@ -15,6 +15,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { RegistrarseComponent } from '../app/Inicio/NavBar/registrarse/registrarse.component';
 import { RecepcionistaComponent } from './recepcionista/recepcionista.component';
 import { ReservaComponent } from './reserva/reserva.component';
+import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ReservaComponent } from './reserva/reserva.component';
     FetchDataComponent,
     RegistrarseComponent,
     RecepcionistaComponent,
-    ReservaComponent
+    ReservaComponent,
+    BarraLateralComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

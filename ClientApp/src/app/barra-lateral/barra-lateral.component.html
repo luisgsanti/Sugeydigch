@@ -1,0 +1,238 @@
+<div class="page-wrapper chiller-theme toggled">
+    <a id="show-sidebar" class="btn btn-sm btn-dark">
+      <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar" class="sidebar-wrapper">
+      <div class="sidebar-content">
+        <div style="cursor: default" class="sidebar-brand">
+          <a class="zolddick"> ZOLDDICK </a>
+          <div id="close-sidebar">
+            <i class="fas fa-times"></i>
+          </div>
+        </div>
+        <div class="sidebar-header" >
+          <div class="user-pic">
+            <img class="img-responsive img-rounded"
+              src="https://yt3.ggpht.com/a/AGF-l79A9cjzQenkHUWo-myeHheaAkm8XZDBL2-HfA=s288-c-k-c0xffffffff-no-rj-mo"
+              class="avatar" alt="Avatar Image">
+          </div>
+          <div style="cursor: default" class="user-info">
+  
+            <div class="login-box">
+              <form>
+                <!-- USERNAME INPUT -->
+                <label for="username">Usuario</label>
+                <input [(ngModel)]="objeto.usuario" [ngModelOptions]="{standalone: true}" type="text" placeholder="Ingrese su Usuario">
+                <!-- PASSWORD INPUT -->
+                <label for="password">Contraseña</label>
+                <input [(ngModel)]="objeto.clave" [ngModelOptions]="{standalone: true}"type="password" placeholder="Ingrese su Contraseña">
+  
+                <input (click)="getUsuario(objeto)" type="submit" value="Login">
+  
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- sidebar-search  -->
+        <div class="sidebar-header">
+          <div class="user-pic">
+            <img class="img-responsive img-rounded"
+              src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+              alt="User picture">
+          </div>
+          <div style="cursor: default" class="user-info">
+              <span class="user-name"><strong>{{nombre}}</strong></span>
+              <span class="user-role"><strong>Administrador</strong></span>
+            <span class="user-status">
+              <i class="fa fa-circle"></i>
+              <span>Online</span>
+            </span>
+          </div>
+        </div>
+        <div class="sidebar-header">
+          <div class="user-pic">
+            <img class="img-responsive img-rounded"
+              src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+              alt="User picture">
+          </div>
+          <div style="cursor: default" class="user-info">
+              <span class="user-name"><strong>{{nombre}}</strong></span>
+              <span class="user-role"><strong>Docente</strong></span>
+            <span class="user-status">
+              <i class="fa fa-circle"></i>
+              <span>Online</span>
+            </span>
+          </div>
+        </div>
+        <div class="sidebar-header" >
+          <div class="user-pic">
+            <img class="img-responsive img-rounded"
+              src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+              alt="User picture">
+          </div>
+          <div style="cursor: default" class="user-info">
+            <span class="user-name"><strong>{{nombre}}</strong></span>
+            <span class="user-role"><strong>Docente en </strong></span>
+            <span class="user-role"><strong>Comision Administrativa</strong></span>
+            <span class="user-status">
+              <i class="fa fa-circle"></i>
+              <span>Online</span>
+            </span>
+          </div>
+        </div>
+        <div class="sidebar-menu">
+          <ul>
+            <br>
+            <li class="sidebar-dropdown" >
+              <a style="cursor: pointer">
+                <i class="fas fa-users"></i>
+                <span>Gestionar Docente</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a routerLink="/Adminitrador/MenuDeGestion/NuevoDocente">Agregar Docentes</a>
+                  </li>
+                  <li>
+                    <a routerLink="/Adminitrador/MenuDeGestion/ConsultarDocentes">Consultar Docentes</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="sidebar-dropdown" >
+              <a style="cursor: pointer">
+                <i class="fas fa-file-alt"></i>
+                <span> Gestionar Periodo Evaluativo</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a>Abrir Periodo de Evaluacion
+                    </a>
+                  </li>
+                  <li>
+                    <a routerLink="/Adminitrador/MenuEvaluador/AsignarEvaluador">Asignar Calificadores</a>
+                  </li>
+                  <li>
+                    <a routerLink="/Adminitrador/MenuEvaluador/DetallesEvaluacion">Estado Actual de los Evaluados</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="sidebar-dropdown">
+              <a style="cursor: pointer">
+                <i class="far fa-edit"></i>
+                <span> Gestinar Formulario</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a routerLink="/Adminitrador/MenuDeFormularios/FormularioActual">Formulario Actual</a>
+                  </li>
+                  <li>
+                    <a routerLink="/Adminitrador/MenuDeFormularios/AgregarPregunta">Agregar Preguntas</a>
+                  </li>
+                  <li>
+                    <a routerLink="/Adminitrador/MenuDeFormularios/ConsultarPreguntas">Consultar Preguntas</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+  
+   <!------------------------------------------------------------------------------------------------------>
+                <li class="sidebar-dropdown" *ngIf="isAuthenticatedRole('DOCENTE')">
+              <a style="cursor: pointer">
+                <i class="fas fa-user-tie"></i>
+                <span> Mi Informacion</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a routerLink="/Inicio">Datos Personales</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+  
+            <li class="sidebar-dropdown" *ngIf="isAuthenticatedRole('DOCENTE')">
+              <a style="cursor: pointer">
+                <i class="fas fa-file-signature"></i>
+                <span> Calificar</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a routerLink="/Docente/RealizarEvaluacion" >Realizar Calificacion</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+  <!------------------------------------------------------------------------------------------------------>
+            <li class="sidebar-dropdown" > 
+              <a style="cursor: pointer">
+                <i class="fas fa-user-tie"></i>
+                <span> Mi Informacion</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a routerLink="/Inicio">Datos Personales</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+  
+            <li class="sidebar-dropdown" >
+              <a style="cursor: pointer">
+                <i class="fas fa-file-signature"></i>
+                <span> Calificar</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a routerLink="/Inicio">Realizar Autoevaluacion</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+  <!------------------------------------------------------------------------------------------------------>
+            <li>
+              <a routerLink="/Inicio" style="cursor: pointer" >
+                <i class="fas fa-home"></i>
+                <span> Volver a Inicio</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- sidebar-menu  -->
+      </div>
+      <!-- sidebar-content  -->
+      <div class="sidebar-footer" *ngIf="isAuthenticated()">
+        <a>
+          <i class="fa fa-bell"></i>
+          <span class="badge badge-pill badge-warning notification">0</span>
+        </a>
+        <a>
+          <i class="fa fa-envelope"></i>
+          <span class="badge badge-pill badge-success notification">0</span>
+        </a>
+        <a>
+          <i class="fa fa-cog"></i>
+          <span class="badge-sonar"></span>
+        </a>
+        <a (click)="logout()">
+          <i class="fa fa-power-off"></i>
+        </a>
+      </div>
+    </nav>
+    <!-- sidebar-wrapper  -->
+    <main class="page-content">
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+    <!-- page-content" -->
+  
+  </div>
+  <!-- page-wrapper -->
+  
