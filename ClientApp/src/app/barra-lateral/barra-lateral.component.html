@@ -6,9 +6,7 @@
       <div class="sidebar-content">
         <div style="cursor: default" class="sidebar-brand">
           <a class="zolddick"> ZOLDDICK </a>
-          <div id="close-sidebar">
-            <i class="fas fa-times"></i>
-          </div>
+          
         </div>
         <div class="sidebar-header" >
           <div class="user-pic">
@@ -16,14 +14,15 @@
               src="https://yt3.ggpht.com/a/AGF-l79A9cjzQenkHUWo-myeHheaAkm8XZDBL2-HfA=s288-c-k-c0xffffffff-no-rj-mo"
               class="avatar" alt="Avatar Image">
           </div>
+          <!--
           <div style="cursor: default" class="user-info">
   
             <div class="login-box">
               <form>
-                <!-- USERNAME INPUT -->
                 <label for="username">Usuario</label>
                 <input [(ngModel)]="objeto.usuario" [ngModelOptions]="{standalone: true}" type="text" placeholder="Ingrese su Usuario">
-                <!-- PASSWORD INPUT -->
+              
+              
                 <label for="password">Contraseña</label>
                 <input [(ngModel)]="objeto.clave" [ngModelOptions]="{standalone: true}"type="password" placeholder="Ingrese su Contraseña">
   
@@ -32,8 +31,10 @@
               </form>
             </div>
           </div>
+        -->
         </div>
         <!-- sidebar-search  -->
+        <!-- 
         <div class="sidebar-header">
           <div class="user-pic">
             <img class="img-responsive img-rounded"
@@ -80,21 +81,22 @@
             </span>
           </div>
         </div>
+      -->
         <div class="sidebar-menu">
           <ul>
             <br>
             <li class="sidebar-dropdown" >
               <a style="cursor: pointer">
                 <i class="fas fa-users"></i>
-                <span>Gestionar Docente</span>
+                <span>Gestionar Reserva</span>
               </a>
               <div class="sidebar-submenu">
                 <ul>
                   <li>
-                    <a routerLink="/Adminitrador/MenuDeGestion/NuevoDocente">Agregar Docentes</a>
+                    <a routerLink="/Reserva">Nueva Reserva</a>
                   </li>
                   <li>
-                    <a routerLink="/Adminitrador/MenuDeGestion/ConsultarDocentes">Consultar Docentes</a>
+                    <a >Consultar Reservas</a>
                   </li>
                 </ul>
               </div>
@@ -111,10 +113,10 @@
                     </a>
                   </li>
                   <li>
-                    <a routerLink="/Adminitrador/MenuEvaluador/AsignarEvaluador">Asignar Calificadores</a>
+                    <a >Asignar Calificadores</a>
                   </li>
                   <li>
-                    <a routerLink="/Adminitrador/MenuEvaluador/DetallesEvaluacion">Estado Actual de los Evaluados</a>
+                    <a >Estado Actual de los Evaluados</a>
                   </li>
                 </ul>
               </div>
@@ -127,20 +129,20 @@
               <div class="sidebar-submenu">
                 <ul>
                   <li>
-                    <a routerLink="/Adminitrador/MenuDeFormularios/FormularioActual">Formulario Actual</a>
+                    <a >Formulario Actual</a>
                   </li>
                   <li>
-                    <a routerLink="/Adminitrador/MenuDeFormularios/AgregarPregunta">Agregar Preguntas</a>
+                    <a >Agregar Preguntas</a>
                   </li>
                   <li>
-                    <a routerLink="/Adminitrador/MenuDeFormularios/ConsultarPreguntas">Consultar Preguntas</a>
+                    <a >Consultar Preguntas</a>
                   </li>
                 </ul>
               </div>
             </li>
   
    <!------------------------------------------------------------------------------------------------------>
-                <li class="sidebar-dropdown" *ngIf="isAuthenticatedRole('DOCENTE')">
+                <li class="sidebar-dropdown">
               <a style="cursor: pointer">
                 <i class="fas fa-user-tie"></i>
                 <span> Mi Informacion</span>
@@ -148,13 +150,13 @@
               <div class="sidebar-submenu">
                 <ul>
                   <li>
-                    <a routerLink="/Inicio">Datos Personales</a>
+                    <a >Datos Personales</a>
                   </li>
                 </ul>
               </div>
             </li>
   
-            <li class="sidebar-dropdown" *ngIf="isAuthenticatedRole('DOCENTE')">
+            <li class="sidebar-dropdown">
               <a style="cursor: pointer">
                 <i class="fas fa-file-signature"></i>
                 <span> Calificar</span>
@@ -162,7 +164,7 @@
               <div class="sidebar-submenu">
                 <ul>
                   <li>
-                    <a routerLink="/Docente/RealizarEvaluacion" >Realizar Calificacion</a>
+                    <a >Realizar Calificacion</a>
                   </li>
                 </ul>
               </div>
@@ -176,7 +178,7 @@
               <div class="sidebar-submenu">
                 <ul>
                   <li>
-                    <a routerLink="/Inicio">Datos Personales</a>
+                    <a >Datos Personales</a>
                   </li>
                 </ul>
               </div>
@@ -190,14 +192,14 @@
               <div class="sidebar-submenu">
                 <ul>
                   <li>
-                    <a routerLink="/Inicio">Realizar Autoevaluacion</a>
+                    <a>Realizar Autoevaluacion</a>
                   </li>
                 </ul>
               </div>
             </li>
   <!------------------------------------------------------------------------------------------------------>
             <li>
-              <a routerLink="/Inicio" style="cursor: pointer" >
+              <a >
                 <i class="fas fa-home"></i>
                 <span> Volver a Inicio</span>
               </a>
@@ -207,7 +209,7 @@
         <!-- sidebar-menu  -->
       </div>
       <!-- sidebar-content  -->
-      <div class="sidebar-footer" *ngIf="isAuthenticated()">
+      <div class="sidebar-footer" >
         <a>
           <i class="fa fa-bell"></i>
           <span class="badge badge-pill badge-warning notification">0</span>
