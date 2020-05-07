@@ -1,92 +1,94 @@
-<app-recepcionista></app-recepcionista>
-
-<div class="container">
-  <h1>Nueva Reserva</h1><br>
-  <div class="card">
-    <div class="card-body">
-      <div class="form-inline">
-        <h5 class="col-sm-2 col-form-label">Fecha de entrada:</h5>
-        <div>
-          <form class="form-inline">
-            <div class="form-group">
-              <div class="input-group">
-                <input class="form-control" placeholder="dd/mm/yyyy" name="d2" #c2="ngModel" [(ngModel)]="model2"
-                  ngbDatepicker #d2="ngbDatepicker">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
+<div class="todo">
+  <app-recepcionista></app-recepcionista>
+  
+  <div class="container">
+    <h1>Nueva Reserva</h1><br>
+    <div class="card">
+      <div class="card-body">
+        <div class="form-inline">
+          <h5 class="col-sm-2 col-form-label">Fecha de entrada:</h5>
+          <div>
+            <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group">
+                  <input class="form-control" placeholder="dd/mm/yyyy" name="d2" #c2="ngModel" [(ngModel)]="model2"
+                    ngbDatepicker #d2="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </form>
-  
-          <!--
-                              <pre>Model: {{ model2 | json }}</pre>
-                              <pre>State: {{ c2.status }}</pre>
-                            -->
+            </form>
+    
+            <!--
+                                <pre>Model: {{ model2 | json }}</pre>
+                                <pre>State: {{ c2.status }}</pre>
+                              -->
+          </div>
         </div>
-      </div>
-      <br>
-      <div class="form-inline">
-        <h5 class="col-sm-2 col-form-label">Fecha de salida:</h5>
-        <div>
-          <form class="form-inline">
-            <div class="form-group">
-              <div class="input-group">
-                <input class="form-control" placeholder="dd/mm/yyyy" name="d2" #c2="ngModel" [(ngModel)]="model2"
-                  ngbDatepicker #d2="ngbDatepicker">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
+        <br>
+        <div class="form-inline">
+          <h5 class="col-sm-2 col-form-label">Fecha de salida:</h5>
+          <div>
+            <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group">
+                  <input class="form-control" placeholder="dd/mm/yyyy" name="d2" #c2="ngModel" [(ngModel)]="model2"
+                    ngbDatepicker #d2="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </form>
-  
-          <!--
-                              <pre>Model: {{ model2 | json }}</pre>
-                              <pre>State: {{ c2.status }}</pre>
-                            -->
+            </form>
+    
+            <!--
+                                <pre>Model: {{ model2 | json }}</pre>
+                                <pre>State: {{ c2.status }}</pre>
+                              -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <br>
-  <button class="btn btn-outline-success" type="button" (click)="open()">Nuevo Cliente</button>
-  <div class="card">
-    <div class="card-body">
-      <div class="input-group mb-3">
-          <h5 class="col-sm-2 col-form-label">Cliente Frecuente</h5>
-          <input class="form-control" placeholder="Buscar Cliente">
-          <div class="input-group-append">
-            <button class="btn btn-outline-info" type="button">Buscar</button>
+    <br>
+    <button class="btn btn-outline-success" type="button" (click)="open()">Nuevo Cliente</button>
+    <div class="card">
+      <div class="card-body">
+        <div class="input-group mb-3">
+            <h5 class="col-sm-2 col-form-label">Cliente Frecuente</h5>
+            <input class="form-control" placeholder="Buscar Cliente">
+            <div class="input-group-append">
+              <button class="btn btn-outline-info" type="button">Buscar</button>
+            </div>
           </div>
-        </div>
-
-        <hr>
-        <div class="form-row">
-          <div class="col-md-3 mb-3">
-            <label class="y">Identificacion:</label>
-            <input readonly class="form-control" type="text">
-          </div>
-          <div class="col-md-3 mb-3">
-            <label class="y">Nombre Completo:</label>
-            <input readonly class="form-control" type="text">
-          </div>
-          <div class="col-md-3 mb-3">
-            <label class="y">Apellido Completo:</label>
-            <input readonly class="form-control" type="text">
-          </div>
-          <div class="col-md-3 mb-3">
-            <label class="y">Correo:</label>
-            <input readonly class="form-control" type="text">
-          </div>
-        </div>
-    </div>
-  </div>
-  <br>
-
   
-  <div style="text-align: right;width:1110px">
-    <button class="btn btn-outline-info" type="button">Confirmar Rerserva</button>
+          <hr>
+          <div class="form-row">
+            <div class="col-md-3 mb-3">
+              <label class="y">Identificacion:</label>
+              <input readonly class="form-control" type="text">
+            </div>
+            <div class="col-md-3 mb-3">
+              <label class="y">Nombre Completo:</label>
+              <input readonly class="form-control" type="text">
+            </div>
+            <div class="col-md-3 mb-3">
+              <label class="y">Apellido Completo:</label>
+              <input readonly class="form-control" type="text">
+            </div>
+            <div class="col-md-3 mb-3">
+              <label class="y">Correo:</label>
+              <input readonly class="form-control" type="text">
+            </div>
+          </div>
+      </div>
+    </div>
+    <br>
+  
+    
+    <div style="text-align: right;width:100%">
+      <button class="btn btn-outline-info" type="button">Confirmar Rerserva</button>
+    </div>
+    <br><br>
   </div>
-  <br><br>
 </div>

@@ -38,6 +38,7 @@ nav > ul {
 
 nav > ul li {
 	display:table-cell;
+	width: 15%;
 }
 
 /*Sub-menu*/
@@ -125,3 +126,9 @@ nav ul li a .cuarto {
 nav ul li a .quinto {
 	background:#37a4d9;
 }
+
+.cero{
+	font-family: Garamond;
+	font-size: 150%;
+}
+
