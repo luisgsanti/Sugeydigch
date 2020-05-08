@@ -9,8 +9,8 @@ using Sugeydigch.Models;
 namespace SUGEYDIGCH.Migrations
 {
     [DbContext(typeof(SugeContext))]
-    [Migration("20200506224313_SugeydigchDB")]
-    partial class SugeydigchDB
+    [Migration("20200508051441_Sugeydigch")]
+    partial class Sugeydigch
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,7 +27,7 @@ namespace SUGEYDIGCH.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Apelido")
+                    b.Property<string>("Apellido")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -50,8 +50,8 @@ namespace SUGEYDIGCH.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Telefono")
-                        .HasColumnType("int");
+                    b.Property<string>("Telefono")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

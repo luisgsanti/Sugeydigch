@@ -14,12 +14,14 @@
                   <input class="form-control" placeholder="dd/mm/yyyy" name="d2" #c2="ngModel" [(ngModel)]="model2"
                     ngbDatepicker #d2="ngbDatepicker">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
+                    <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button">
+                      <span><i class="fas fa-calendar-alt"></i></span>
+                    </button>
                   </div>
                 </div>
               </div>
             </form>
-    
+            
             <!--
                                 <pre>Model: {{ model2 | json }}</pre>
                                 <pre>State: {{ c2.status }}</pre>
@@ -36,7 +38,9 @@
                   <input class="form-control" placeholder="dd/mm/yyyy" name="d2" #c2="ngModel" [(ngModel)]="model2"
                     ngbDatepicker #d2="ngbDatepicker">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
+                    <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button">
+                      <span><i class="fas fa-calendar-alt"></i></span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -69,11 +73,11 @@
               <input readonly class="form-control" type="text">
             </div>
             <div class="col-md-3 mb-3">
-              <label class="y">Nombre Completo:</label>
+              <label class="y">Nombre:</label>
               <input readonly class="form-control" type="text">
             </div>
             <div class="col-md-3 mb-3">
-              <label class="y">Apellido Completo:</label>
+              <label class="y">Apellido:</label>
               <input readonly class="form-control" type="text">
             </div>
             <div class="col-md-3 mb-3">

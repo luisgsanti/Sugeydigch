@@ -25,7 +25,7 @@ namespace SUGEYDIGCH.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Apelido")
+                    b.Property<string>("Apellido")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -48,8 +48,8 @@ namespace SUGEYDIGCH.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Telefono")
-                        .HasColumnType("int");
+                    b.Property<string>("Telefono")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

@@ -5,6 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,6 +38,7 @@ import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
     NgbModule,
     NgbPaginationModule, 
     NgbAlertModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

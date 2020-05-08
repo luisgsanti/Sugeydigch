@@ -7,7 +7,7 @@
 EL CÓDIGO A CONTINUACIÓN YA ESTA CORREGIDO*/
 
 header {
-	margin-top:10px;
+	margin-top:0px;
     width: 100%;
     overflow: hidden;
     height: 120px;
@@ -37,6 +37,11 @@ nav > ul {
 }
 
 nav > ul li {
+	display:table-cell;
+	width: 15%;
+}
+
+nav > ul .uno, .dos, .tres, .cuatro, .cinco {
 	display:table-cell;
 	width: 15%;
 }
@@ -127,7 +132,8 @@ nav ul li a .quinto {
 	background:#37a4d9;
 }
 
-.cero{
+nav > ul li .cero{
+	text-align:left;
 	font-family: Garamond;
 	font-size: 150%;
 }

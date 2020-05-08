@@ -7,11 +7,11 @@
 EL CÓDIGO A CONTINUACIÓN YA ESTA CORREGIDO*/
 
 header {
-	margin-top:10px;
+	margin-top:0px;
     width: 100%;
     overflow: hidden;
-    height: 150px;
-    position: relative;
+    height: 70px;
+	position: relative;
 }
 
 nav {
@@ -20,8 +20,8 @@ nav {
     left:0;
     right:0;
 	margin:20px auto;
-	max-width:82%;
-	width:90%;
+	max-width:100%;
+	width:100%;
 }
 
 nav ul {
@@ -42,7 +42,7 @@ nav > ul li {
 
 nav > ul .uno, .dos{
 	display:table-cell;
-	width: 10%;
+	width: 5%;
 }
 
 /*Sub-menu*/
@@ -79,6 +79,12 @@ nav > ul li a {
 	-ms-transition: all .3s ease;
 	-o-transition: all .3s ease;
 	transition: all .3s ease;
+}
+
+nav > ul li .cero{
+	text-align:left;
+	font-family: Garamond;
+	font-size: 150%;
 }
 
 nav > ul > li > ul > li a:hover {
@@ -131,7 +137,3 @@ nav ul li a .quinto {
 	background:#37a4d9;
 }
 
-.cero{
-	font-family: Garamond;
-	font-size: 150%;
-}
