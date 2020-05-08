@@ -9,12 +9,16 @@ import { RegistrarseComponent } from '../app/Inicio/NavBar/registrarse/registrar
 import { HomeComponent } from '../app/home/home.component';
 import { RecepcionistaComponent } from '../app/recepcionista/recepcionista.component'
 import { ReservaComponent } from '../app/reserva/reserva.component'
+import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { CounterComponent } from './counter/counter.component';
 
 const routes: Routes = [
 
-  { path: '', component:  HomeComponent, pathMatch: 'full' },
+  { path: '', component:  CounterComponent, pathMatch: 'full' },
   { path:'Recepcionista', component:RecepcionistaComponent  },
-  { path:'Reserva', component:ReservaComponent  }
+  { path:'Reserva', component:ReservaComponent  },
+  { path:'Fecha', component:FetchDataComponent  },
+  { path:'Counter', component:CounterComponent  },
 
 ];
 
