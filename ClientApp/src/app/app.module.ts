@@ -17,6 +17,7 @@ import { RegistrarseComponent } from '../app/Inicio/NavBar/registrarse/registrar
 import { RecepcionistaComponent } from './recepcionista/recepcionista.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
+import { ClineteFiltroPipe } from './Filtos/clinete-filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
     RegistrarseComponent,
     RecepcionistaComponent,
     ReservaComponent,
-    BarraLateralComponent
+    BarraLateralComponent,
+    ClineteFiltroPipe,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

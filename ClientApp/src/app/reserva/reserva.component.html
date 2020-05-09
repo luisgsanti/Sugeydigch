@@ -57,42 +57,73 @@
     <br>
     <button class="btn btn-outline-success" type="button" (click)="open()">Nuevo Cliente</button>
     <div class="card">
-      <div class="card-body">
+      <div class="card-body cliente">
         <div class="input-group mb-3">
-            <h5 class="col-sm-2 col-form-label">Cliente Frecuente</h5>
-            <input class="form-control" placeholder="Buscar Cliente">
+            <h5 class="col-sm-2 col-form-label">Clientes Frecuente</h5>
+            <input [(ngModel)]="searchText"  type="text"  class="form-control" placeholder="Filtrar Cliente">
             <div class="input-group-append">
               <button class="btn btn-outline-info" type="button">Buscar</button>
             </div>
           </div>
   
           <hr>
+
+          <div class="table-container">
+            <table id="tabla" class="table-striped tabla">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Identificacion</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Correo</th>
+                  <th scope="col">Añadir Reserva</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let cliente of clientes | clineteFiltro:searchText;" >
+                  <td>{{cliente.id}}</td>
+                  <td>{{cliente.identificacion}}</td>
+                  <td>{{cliente.nombre}}</td>
+                  <td>{{cliente.apellido}}</td>
+                  <td>{{cliente.correo}}</td>
+                  <td><a routerLink="#" class="button"><span><i class="far fa-check-circle"></i></span></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <!--
           <div class="form-row">
             <div class="col-md-3 mb-3">
               <label class="y">Identificacion:</label>
-              <input readonly class="form-control" type="text">
+              <input [(ngModel)]="this.cliente.identificacion" [ngModelOptions]="{standalone: true}" readonly class="form-control" type="text">
             </div>
             <div class="col-md-3 mb-3">
               <label class="y">Nombre:</label>
-              <input readonly class="form-control" type="text">
+              <input [(ngModel)]="this.cliente.nombre" [ngModelOptions]="{standalone: true}" readonly class="form-control" type="text">
             </div>
             <div class="col-md-3 mb-3">
               <label class="y">Apellido:</label>
-              <input readonly class="form-control" type="text">
+              <input [(ngModel)]="this.cliente.apellido" [ngModelOptions]="{standalone: true}" readonly class="form-control" type="text">
             </div>
             <div class="col-md-3 mb-3">
               <label class="y">Correo:</label>
-              <input readonly class="form-control" type="text">
+              <input [(ngModel)]="this.cliente.correo" [ngModelOptions]="{standalone: true}" readonly class="form-control" type="text">
             </div>
           </div>
+          -->
       </div>
+      
     </div>
     <br>
-  
     
+    <!--
     <div style="text-align: right;width:100%">
       <button class="btn btn-outline-info" type="button">Confirmar Rerserva</button>
     </div>
+    -->
     <br><br>
   </div>
 </div>
+
