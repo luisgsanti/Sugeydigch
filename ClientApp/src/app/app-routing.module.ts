@@ -12,6 +12,7 @@ import { ReservaComponent } from '../app/reserva/reserva.component'
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { CounterComponent } from './counter/counter.component';
 import { LoginComponent} from './Inicio/login/login.component';
+import { ServiciosComponent} from './Inicio/servicios/servicios.component'
 
 const routes: Routes = [
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path:'Fecha', component:FetchDataComponent  },
   { path:'Counter', component:CounterComponent  },
   { path:'Login', component:LoginComponent },
+  { path:'Servicios', component:ServiciosComponent },
 
 ];
 

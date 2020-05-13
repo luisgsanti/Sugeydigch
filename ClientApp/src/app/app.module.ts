@@ -20,6 +20,10 @@ import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { ClineteFiltroPipe } from './Filtos/clinete-filtro.pipe';
 import { ConsultarClienteComponent } from './Cliente/consultar-cliente/consultar-cliente.component';
 import { LoginComponent } from './Inicio/login/login.component';
+import { ServiciosComponent } from './Inicio/servicios/servicios.component';
+import { HabitacionesComponent } from './Inicio/habitaciones/habitaciones.component';
+import { ContactenosComponent } from './Inicio/contactenos/contactenos.component';
+import { DescuentosComponent } from './Inicio/descuentos/descuentos.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,10 @@ import { LoginComponent } from './Inicio/login/login.component';
     ClineteFiltroPipe,
     ConsultarClienteComponent,
     LoginComponent,
+    ServiciosComponent,
+    HabitacionesComponent,
+    ContactenosComponent,
+    DescuentosComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -48,6 +56,10 @@ import { LoginComponent } from './Inicio/login/login.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [RegistrarseComponent, LoginComponent]
+  entryComponents: [
+    RegistrarseComponent, 
+    LoginComponent, 
+    ServiciosComponent,
+    HabitacionesComponent]
 })
 export class AppModule { }
