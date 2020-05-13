@@ -18,6 +18,8 @@ import { RecepcionistaComponent } from './recepcionista/recepcionista.component'
 import { ReservaComponent } from './reserva/reserva.component';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { ClineteFiltroPipe } from './Filtos/clinete-filtro.pipe';
+import { ConsultarClienteComponent } from './Cliente/consultar-cliente/consultar-cliente.component';
+import { LoginComponent } from './Inicio/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { ClineteFiltroPipe } from './Filtos/clinete-filtro.pipe';
     ReservaComponent,
     BarraLateralComponent,
     ClineteFiltroPipe,
+    ConsultarClienteComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -44,6 +48,6 @@ import { ClineteFiltroPipe } from './Filtos/clinete-filtro.pipe';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [RegistrarseComponent]
+  entryComponents: [RegistrarseComponent, LoginComponent]
 })
 export class AppModule { }

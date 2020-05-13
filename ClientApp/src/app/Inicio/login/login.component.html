@@ -1,0 +1,27 @@
+<div class="modal-body">
+    <body>
+      <div class="content">
+        <div class="text">
+         Iniciar Sesion</div>
+        <form action="#">
+          <div class="field">
+            <input type="text" required>
+            <span><i class="fas fa-user"></i></span>
+            <label>Ususario</label>
+          </div>
+          <div class="field">
+            <input type="password" required>
+            <span class="fas fa-lock"></span>
+            <label>Contraseña</label>
+          </div>
+          <div class="forgot-pass">
+            <a href="#">¿Olvido su contraseña?</a></div>
+          <button routerLink="/Recepcionista" (click)="close()" >Entrar</button>
+          <div class="sign-up">
+            ¿No tiene una cuenta?
+            <a href="#" (click)="close()">Registrarse</a>
+          </div>
+        </form>
+      </div>
+    </body>
+</div>

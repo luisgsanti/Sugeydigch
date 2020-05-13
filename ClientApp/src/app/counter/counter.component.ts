@@ -4,6 +4,7 @@ import { RegistrarseComponent } from '../Inicio/NavBar/registrarse/registrarse.c
 import { ClienteService} from '../services/cliente.service'
 import { Cliente } from '../models/cliente'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { LoginComponent} from '../Inicio/login/login.component'
 
 @Component({
   selector: 'app-counter-component',
@@ -58,7 +59,7 @@ export class CounterComponent {
   
   open(){
     //this.modalService.open(RegistrarseComponent, {centered:true});
-    this.modalService.open(RegistrarseComponent, { size: 'lg' });
+    this.modalService.open(LoginComponent, { centered: true });
     //modalRef.componentInstance.docente = docente;
   }
 }

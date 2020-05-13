@@ -11,14 +11,16 @@ import { RecepcionistaComponent } from '../app/recepcionista/recepcionista.compo
 import { ReservaComponent } from '../app/reserva/reserva.component'
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { CounterComponent } from './counter/counter.component';
+import { LoginComponent} from './Inicio/login/login.component';
 
 const routes: Routes = [
 
-  { path: '', component:  CounterComponent, pathMatch: 'full' },
+  { path:'', component:  CounterComponent, pathMatch: 'full' },
   { path:'Recepcionista', component:RecepcionistaComponent  },
   { path:'Reserva', component:ReservaComponent  },
   { path:'Fecha', component:FetchDataComponent  },
   { path:'Counter', component:CounterComponent  },
+  { path:'Login', component:LoginComponent },
 
 ];
 
