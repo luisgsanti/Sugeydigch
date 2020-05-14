@@ -13,16 +13,14 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { CounterComponent } from './counter/counter.component';
 import { LoginComponent} from './Inicio/login/login.component';
 import { ServiciosComponent} from './Inicio/servicios/servicios.component'
+import { ConsultarClienteComponent } from './Cliente/consultar-cliente/consultar-cliente.component'
 
 const routes: Routes = [
 
   { path:'', component:  CounterComponent, pathMatch: 'full' },
   { path:'Recepcionista', component:RecepcionistaComponent  },
   { path:'Reserva', component:ReservaComponent  },
-  { path:'Fecha', component:FetchDataComponent  },
-  { path:'Counter', component:CounterComponent  },
-  { path:'Login', component:LoginComponent },
-  { path:'Servicios', component:ServiciosComponent },
+  { path:'ConsultarClientes', component:ConsultarClienteComponent },
 
 ];
 

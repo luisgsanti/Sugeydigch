@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { LoginComponent} from '../Inicio/login/login.component'
 import { ServiciosComponent} from '../Inicio/servicios/servicios.component'
 import { HabitacionesComponent } from '../Inicio/habitaciones/habitaciones.component';
+import { ContactenosComponent } from '../Inicio/contactenos/contactenos.component';
 
 @Component({
   selector: 'app-counter-component',
@@ -74,6 +75,10 @@ export class CounterComponent {
 
   openHabitaciones(){
     this.modalService.open(HabitacionesComponent, { size: 'xl' });
+  }
+
+  openContactenos(){
+    this.modalService.open(ContactenosComponent, { size: 'lg' });
   }
 
 }

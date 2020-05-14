@@ -24,6 +24,7 @@ import { ServiciosComponent } from './Inicio/servicios/servicios.component';
 import { HabitacionesComponent } from './Inicio/habitaciones/habitaciones.component';
 import { ContactenosComponent } from './Inicio/contactenos/contactenos.component';
 import { DescuentosComponent } from './Inicio/descuentos/descuentos.component';
+import { ConsultarHabitacionesComponent } from './Habitaciones/consultar-habitaciones/consultar-habitaciones.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { DescuentosComponent } from './Inicio/descuentos/descuentos.component';
     HabitacionesComponent,
     ContactenosComponent,
     DescuentosComponent,
+    ConsultarHabitacionesComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -60,6 +62,8 @@ import { DescuentosComponent } from './Inicio/descuentos/descuentos.component';
     RegistrarseComponent, 
     LoginComponent, 
     ServiciosComponent,
-    HabitacionesComponent]
+    HabitacionesComponent,
+    ContactenosComponent
+  ]
 })
 export class AppModule { }

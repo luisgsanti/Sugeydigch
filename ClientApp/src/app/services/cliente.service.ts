@@ -76,7 +76,7 @@ export class ClienteService {
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
-    alert(`DocenteService: ${message}`);
+    alert(`${message}`);
   }
 
 }

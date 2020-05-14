@@ -16,7 +16,6 @@ export class ReservaComponent implements OnInit {
   clientes: Cliente[];
 
   ngOnInit() {
-    this.getAll();
   }
 
   open(){

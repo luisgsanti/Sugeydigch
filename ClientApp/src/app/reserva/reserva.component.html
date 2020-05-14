@@ -11,10 +11,10 @@
             <form class="form-inline">
               <div class="form-group">
                 <div class="input-group">
-                  <input class="form-control" placeholder="dd/mm/yyyy" name="d2" #c2="ngModel" [(ngModel)]="model2"
-                    ngbDatepicker #d2="ngbDatepicker">
+                  <input class="form-control" placeholder="dd/mm/yyyy" name="d1" #c1="ngModel" [(ngModel)]="model1"
+                    ngbDatepicker #d1="ngbDatepicker">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button">
+                    <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button">
                       <span><i class="fas fa-calendar-alt"></i></span>
                     </button>
                   </div>
@@ -62,7 +62,7 @@
             <h5 class="col-sm-2 col-form-label">Clientes Frecuente</h5>
             <input [(ngModel)]="searchText"  type="text"  class="form-control" placeholder="Filtrar por Identificacion, Nombre, Apellido">
             <div class="input-group-append">
-              <button class="btn btn-outline-info" type="button">Buscar</button>
+              <button class="btn btn-outline-info" (click)="getAll()" type="button">Cargar Lista<i class="fas fa-sync-alt"></i></button>
             </div>
           </div>
   
@@ -92,37 +92,10 @@
               </tbody>
             </table>
           </div>
-          
-          <!--
-          <div class="form-row">
-            <div class="col-md-3 mb-3">
-              <label class="y">Identificacion:</label>
-              <input [(ngModel)]="this.cliente.identificacion" [ngModelOptions]="{standalone: true}" readonly class="form-control" type="text">
-            </div>
-            <div class="col-md-3 mb-3">
-              <label class="y">Nombre:</label>
-              <input [(ngModel)]="this.cliente.nombre" [ngModelOptions]="{standalone: true}" readonly class="form-control" type="text">
-            </div>
-            <div class="col-md-3 mb-3">
-              <label class="y">Apellido:</label>
-              <input [(ngModel)]="this.cliente.apellido" [ngModelOptions]="{standalone: true}" readonly class="form-control" type="text">
-            </div>
-            <div class="col-md-3 mb-3">
-              <label class="y">Correo:</label>
-              <input [(ngModel)]="this.cliente.correo" [ngModelOptions]="{standalone: true}" readonly class="form-control" type="text">
-            </div>
-          </div>
-          -->
       </div>
       
     </div>
     <br>
-    
-    <!--
-    <div style="text-align: right;width:100%">
-      <button class="btn btn-outline-info" type="button">Confirmar Rerserva</button>
-    </div>
-    -->
     <br><br>
   </div>
 </div>

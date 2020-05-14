@@ -15,7 +15,7 @@ export class AuthService {
         sessionStorage.setItem('identificacion', identificacion);
         sessionStorage.setItem('user', nombre);
         sessionStorage.setItem('roles', JSON.stringify([rol]));        
-        this._router.navigate(['/Recepcionista']);
+        this._router.navigate(['/Reserva']);
     }
 
     logout() {

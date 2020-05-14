@@ -11,6 +11,7 @@ th, td{
     padding: 10px;
     font-family:  'Times New Roman', Times, serif;
     font-size: large;
+    text-align: center;
 }
 
 
@@ -35,7 +36,6 @@ th, td{
 .fa-check-circle{
     color:green;
     display: inline-block;
-    padding-left: 38px;
 }
 
 .fa-calendar-alt{
@@ -53,4 +53,9 @@ h1{
     padding-top: 20px;
     font-family:  'Times New Roman', Times, serif;
 }
+
+.fa-sync-alt{
+    padding-left: 10px;
+}
+
 

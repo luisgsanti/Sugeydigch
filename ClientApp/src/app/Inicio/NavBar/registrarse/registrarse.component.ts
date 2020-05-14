@@ -40,6 +40,7 @@ export class RegistrarseComponent implements OnInit {
 
   add() {
     this.clienteservice.add(this.cliente).subscribe();
+    this.onReset();
   }
 
   get f() {

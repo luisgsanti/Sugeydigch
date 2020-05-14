@@ -14,7 +14,8 @@
             <label>Usuario</label>         
           </div>
           <div class="field">
-            <input [(ngModel)]="objeto.clave" [ngModelOptions]="{standalone: true}" type="text" placeholder="Contraseña">
+            <input [(ngModel)]="objeto.clave" [ngModelOptions]="{standalone: true}" type="text" placeholder="Contraseña"
+            type="password">
             <span class="fas fa-lock"></span>
             <label>Contraseña</label>
           </div>
@@ -23,7 +24,7 @@
           <button (click)="getUsuario(objeto)" value="Cliente">Entrar</button>
           <div class="sign-up">
             ¿No tiene una cuenta?
-            <a href="#" (click)="logout()">Registrarse</a>
+            <a href="#" (click)="close()">Registrarse</a>
           </div>
         </form>
       </div>
