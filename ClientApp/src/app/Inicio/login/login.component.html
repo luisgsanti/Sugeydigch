@@ -9,21 +9,21 @@
          Iniciar Sesion</div>
         <form action="#">
           <div class="field">
-            <input type="text" required>
+            <input [(ngModel)]="objeto.usuario" [ngModelOptions]="{standalone: true}" type="text" placeholder="Usuario">
             <span><i class="fas fa-user"></i></span>
-            <label>Ususario</label>
+            <label>Usuario</label>         
           </div>
           <div class="field">
-            <input type="password" required>
+            <input [(ngModel)]="objeto.clave" [ngModelOptions]="{standalone: true}" type="text" placeholder="Contraseña">
             <span class="fas fa-lock"></span>
             <label>Contraseña</label>
           </div>
           <div class="forgot-pass">
-            <a href="#">¿Olvido su contraseña?</a></div>
-          <button routerLink="/Recepcionista" (click)="close()" >Entrar</button>
+            <a href="#">¿Olvido su contraseña?</a></div>         
+          <button (click)="getUsuario(objeto)" value="Cliente">Entrar</button>
           <div class="sign-up">
             ¿No tiene una cuenta?
-            <a href="#" (click)="close()">Registrarse</a>
+            <a href="#" (click)="logout()">Registrarse</a>
           </div>
         </form>
       </div>

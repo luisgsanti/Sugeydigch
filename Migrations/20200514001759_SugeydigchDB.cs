@@ -2,7 +2,7 @@
 
 namespace SUGEYDIGCH.Migrations
 {
-    public partial class Sugeydigch : Migration
+    public partial class SugeydigchDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -42,6 +42,22 @@ namespace SUGEYDIGCH.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Login",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Identificacion = table.Column<int>(nullable: false),
+                    Usuario = table.Column<string>(nullable: false),
+                    Clave = table.Column<string>(nullable: false),
+                    Rol = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Login", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Reservas",
                 columns: table => new
                 {
@@ -67,6 +83,9 @@ namespace SUGEYDIGCH.Migrations
 
             migrationBuilder.DropTable(
                 name: "Habitaciones");
+
+            migrationBuilder.DropTable(
+                name: "Login");
 
             migrationBuilder.DropTable(
                 name: "Reservas");

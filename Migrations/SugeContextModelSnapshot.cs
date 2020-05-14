@@ -82,6 +82,33 @@ namespace SUGEYDIGCH.Migrations
                     b.ToTable("Habitaciones");
                 });
 
+            modelBuilder.Entity("Sugeydigch.Models.Login", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Clave")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Identificacion")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Rol")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Usuario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Login");
+                });
+
             modelBuilder.Entity("Sugeydigch.Models.Reserva", b =>
                 {
                     b.Property<int>("Id")

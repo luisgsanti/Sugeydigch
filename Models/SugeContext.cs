@@ -12,5 +12,7 @@ namespace Sugeydigch.Models
         public DbSet <Habitacion> Habitaciones {get;set;}
 
         public DbSet <Reserva> Reservas {get;set;}
+        
+        public DbSet<Login> Login { get; set; }
     }
 }
