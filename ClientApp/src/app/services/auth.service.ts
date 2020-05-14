@@ -10,12 +10,16 @@ export class AuthService {
 
     constructor(private _router: Router) {}
 
-    login(identificacion: string, rol: string, nombre: string) {
+    login(nombre: string, rol: string, identificacion: string) {
 
-        sessionStorage.setItem('identificacion', identificacion);
         sessionStorage.setItem('user', nombre);
+        sessionStorage.setItem('identificontcacion', identificacion);
         sessionStorage.setItem('roles', JSON.stringify([rol]));        
-        this._router.navigate(['/Reserva']);
+        if(rol === 'RECEPCIONISTA'){
+            this._router.navigate(['/Reserva']);
+        }else{
+            this._router.navigate(['/#']);
+        }
     }
 
     logout() {

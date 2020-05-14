@@ -18,11 +18,18 @@ export class LoginComponent implements OnInit {
 
   closeResult: string;
   modal : NgbModalRef;
-  constructor(private authService: AuthService, private loginService:LoginService,private modalService: NgbModal, public activeModal: NgbActiveModal) { }
+  constructor(
+    private authService: AuthService, 
+    private loginService:LoginService,
+    private modalService: NgbModal, 
+    public activeModal: NgbActiveModal,
+    private authorizeService: AuthService,
+    ) { }
 
   log:Login;
   objeto:Login;
   nombre:string;
+  rol:string;
 
   getUsuario(objeto:Login): void {
 
@@ -40,6 +47,17 @@ export class LoginComponent implements OnInit {
     });
   }
 
+   public isAuthenticated(): boolean
+  {
+    let isAuth=this.authorizeService.isAuthenticated();
+    if(isAuth)
+    {  
+      this.nombre=sessionStorage.getItem('user');
+      this.rol=sessionStorage.getItem('rol');
+    }
+    return isAuth;
+  }
+
   logout() {
     this.authService.logout();
   }
@@ -51,5 +69,6 @@ export class LoginComponent implements OnInit {
   close(){
     this.activeModal.close();
   }
+
 
 }

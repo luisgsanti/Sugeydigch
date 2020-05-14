@@ -25,6 +25,7 @@ import { HabitacionesComponent } from './Inicio/habitaciones/habitaciones.compon
 import { ContactenosComponent } from './Inicio/contactenos/contactenos.component';
 import { DescuentosComponent } from './Inicio/descuentos/descuentos.component';
 import { ConsultarHabitacionesComponent } from './Habitaciones/consultar-habitaciones/consultar-habitaciones.component';
+import { ModificarClienteComponent } from './Cliente/modificar-cliente/modificar-cliente.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ConsultarHabitacionesComponent } from './Habitaciones/consultar-habitac
     ContactenosComponent,
     DescuentosComponent,
     ConsultarHabitacionesComponent,
+    ModificarClienteComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
