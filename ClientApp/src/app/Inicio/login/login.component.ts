@@ -28,14 +28,12 @@ export class LoginComponent implements OnInit {
 
     this.loginService.getUsuario(objeto.usuario).subscribe(aux => {
       
-      alert(JSON.stringify(objeto.usuario));
-      alert(JSON.stringify(objeto.clave));
-
       this.log = aux;
 
       if(objeto.clave === this.log.clave){
         this.authService.login(this.log.usuario,this.log.rol, this.log.identificacion);
-        alert(JSON.stringify("Ha sido logeado con exito: " + this.log.usuario));
+        //alert(JSON.stringify("Ha sido logeado con exito: " + this.log.usuario));
+        this.close();
       }else{
         alert("Usuario o Clave Incorrecto");
       }
