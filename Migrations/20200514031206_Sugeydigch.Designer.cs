@@ -9,8 +9,8 @@ using Sugeydigch.Models;
 namespace SUGEYDIGCH.Migrations
 {
     [DbContext(typeof(SugeContext))]
-    [Migration("20200514001759_SugeydigchDB")]
-    partial class SugeydigchDB
+    [Migration("20200514031206_Sugeydigch")]
+    partial class Sugeydigch
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -2,7 +2,7 @@
 
 namespace SUGEYDIGCH.Migrations
 {
-    public partial class SugeydigchDB : Migration
+    public partial class Sugeydigch : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

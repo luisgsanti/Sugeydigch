@@ -39,6 +39,7 @@ export class CounterComponent {
 
   add() {
     this.clienteservice.add(this.cliente).subscribe();
+    this.onReset();
   }
 
   get f() {
@@ -74,4 +75,5 @@ export class CounterComponent {
   openHabitaciones(){
     this.modalService.open(HabitacionesComponent, { size: 'xl' });
   }
+
 }

@@ -87,7 +87,7 @@ a:hover, a:focus {
 }
 #slider3-pager .rslides_here a {
     background: transparent;
-    border: 2px solid #e25111;
+    border: 2px solid black;
 }
 #slider3-pager a {
     padding: 4px;
@@ -182,11 +182,16 @@ a:hover, a:focus {
   -webkit-transition: transform 0.5s ease;
 }
 
+slider-info1 h3{
+    color: rgb(0, 119, 255);
+}
+
 .linkHoverEffect_2 li a:before {
     position: absolute;
     top: 100%;
     content: attr(data-link-alt);
-    color: #e25111;
+    color: rgb(0, 119, 255);
+    font-weight: bold;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     /*font-weight: 400 !important;*/
@@ -223,7 +228,7 @@ a:hover, a:focus {
 	text-transform: uppercase;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus,.navbar-default .navbar-nav li a.active {
-    color: #f44639 !important;
+    color: black !important;
 	background:none!important;
 }
 .navbar-right {
@@ -254,7 +259,8 @@ a:hover, a:focus {
     float: right;
 }
 nav.linkEffects.linkHoverEffect_2 ul li a.active {
-    color: #e25111 !important;
+    color: rgb(0, 119, 255) !important;
+    font-weight: bold;
 }
 /*-- //top-nav --*/
 /*--// navigation --*/
@@ -263,7 +269,6 @@ nav.linkEffects.linkHoverEffect_2 ul li a.active {
 /*-- header --*/
 .banner-agile-top .number h3 {
     float: left;
-	color:#fff;
 	font-size: 1.2em;
 }
 .logo h1 a{
@@ -297,7 +302,7 @@ nav.linkEffects.linkHoverEffect_2 ul li a.active {
     -ms-transition: 0.5s all;
 }
 .top-icons ul li a:hover {
-    color: #e25111;
+    color: black;
 	 transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -o-transition: 0.5s all;
@@ -528,7 +533,19 @@ nav.navbar.navbar-default {
    background-size: 100% 100%;
    background-attachment: fixed;
    padding: 300px 0;
+   
 }
+
+/*.textoinfo{
+    width: 60%;
+    margin: 0 auto;
+    background:rgba(8, 8, 8, 0.32);
+    border-radius: 10px;
+    box-shadow: -3px -3px 7px #ffffff73,
+               2px 2px 5px rgba(94,104,121,0.288);
+     width: 1%;
+    text-align:left;
+}*/
 
 /*.slider-info1 {
     position: static; 
@@ -539,15 +556,11 @@ nav.navbar.navbar-default {
     background-size: cover;
 }*/
 
-.slider-info img,.slider-info1 img,.slider-info2 img {
-    width: 150px;
-    margin: 0 auto;
-    margin-bottom: 2.5em;
-}
+
 .slider-info h3, .slider-info1 h3, .slider-info2 h3 {
     font-size: 45px;
     font-weight: 600;
-    color: #FFF;
+    color: rgb(0, 119, 255);
     text-transform: uppercase;
     /* margin: 20px 0px; */
     width: 50%;
@@ -559,10 +572,10 @@ nav.navbar.navbar-default {
     font-size: 14px;
     font-weight: 100;
     color: #d3d8d8;
-    margin-left: 13em;
-    line-height: 28px;
+
     letter-spacing: 1px;
-    width: 50%;
+    width: 1%;
+    text-align:left;
 }
 .slider-info h4 {
     font-size: 45px;
@@ -657,6 +670,11 @@ font-weight:600;
     font-style: normal;
     margin: .8em 0 0;
 	padding-bottom: 0.5em;
+}
+
+.fecha{
+    width: 60%;
+    padding: 100px;
 }
 
 .w3layouts_main_grid input[type="text"]{
@@ -2412,6 +2430,6 @@ h3.tittle-two{
 .titulo{
     text-align: center;
     font-size: 80px;
-    color: white;
+    color: rgb(0, 119, 255);
     /*-webkit-text-stroke: 2px #e25111;*/
 }
