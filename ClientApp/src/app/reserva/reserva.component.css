@@ -1,5 +1,5 @@
 .container{
-    max-width: 78%;
+    max-width: 96%;
     background: whitesmoke;
 }
 
@@ -43,9 +43,10 @@ th, td{
 }
 
 .todo{
-    background-image: url(../counter/images/hotel.jpg);
+    background-color: whitesmoke;
    background-size: 100% 100%;
    background-attachment: fixed;
+   margin-left: 250px;
 }
 
 h1{

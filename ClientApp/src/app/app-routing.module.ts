@@ -15,6 +15,7 @@ import { LoginComponent} from './Inicio/login/login.component';
 import { ServiciosComponent} from './Inicio/servicios/servicios.component'
 import { ConsultarClienteComponent } from './Cliente/consultar-cliente/consultar-cliente.component'
 import { ModificarClienteComponent } from './Cliente/modificar-cliente/modificar-cliente.component'
+import { NavMenuComponent } from './nav-menu/nav-menu.component'
 
 const routes: Routes = [
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path:'Reserva', component:ReservaComponent  },
   { path:'ConsultarClientes', component:ConsultarClienteComponent },
   { path:'ModificarCliente/:id', component:ModificarClienteComponent  },
+  { path:'NavMenu', component:NavMenuComponent }
 
 ];
 
