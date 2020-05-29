@@ -11,19 +11,6 @@
   <!-- header -->
   <div class="header">
     <div class="agile-top-header">
-      <div class="banner-agile-top">
-        <div class="number">
-          <!-- <h3><i class="fa fa-phone" aria-hidden="true"></i> +91 080 987 6541</h3> -->
-        </div>
-        <!--<div class="top-icons">
-					<ul>
-						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-					</ul>
-				</div>-->
-      </div>
       <h1 class="titulo">La Maravilla</h1>
       <!-- navigation -->
       <div class="top-left">
@@ -34,10 +21,13 @@
               <nav class="linkEffects linkHoverEffect_2">
                 <ul>
                   <li><a data-link-alt="home" class="active"><span>Home</span></a></li>
-                  <li><a href="#" (click)="openHabitaciones()" data-link-alt="habitaciones" class="scroll"><span>Habitaciones</span></a></li>
-                  <li><a href="#" (click)="openServicios()" data-link-alt="servicios" class="scroll"><span>Servicios</span></a></li>
+                  <li><a href="#" (click)="openHabitaciones()" data-link-alt="habitaciones"
+                      class="scroll"><span>Habitaciones</span></a></li>
+                  <li><a href="#" (click)="openServicios()" data-link-alt="servicios"
+                      class="scroll"><span>Servicios</span></a></li>
                   <li><a href="#" data-link-alt="descuentos" class="scroll"><span>Descuentos</span></a></li>
-                  <li><a href="#" (click)="openContactenos()" data-link-alt="contactenos" class="scroll"><span>Contactenos</span></a></li>
+                  <li><a href="#" (click)="openContactenos()" data-link-alt="contactenos"
+                      class="scroll"><span>Contactenos</span></a></li>
                   <li><a href="#" (click)="openLogin()" data-link-alt="Ingresar"
                       class="scroll"><span>Ingresar</span></a></li>
                 </ul>
@@ -59,12 +49,13 @@
         <li>
           <div class="slider-info1">
             <div class="textoinfo">
-				<h3>Bienvenidos</h3>
-				<p>Un lugar donde se unen el descanso, la buena cocina y el arte. Contamos con habitaciones simples y dobles,
-          todas con amplios espacios y equipadas para su comodidad. Instalaciones en las cuales podra disfutar 
-          mientras se relaja en un ambiente familiar.
-        </p>
-			</div>
+              <h3>Bienvenidos</h3>
+              <p>Un lugar donde se unen el descanso, la buena cocina y el arte. Contamos con habitaciones simples y
+                dobles,
+                todas con amplios espacios y equipadas para su comodidad. Instalaciones en las cuales podra disfutar
+                mientras se relaja en un ambiente familiar.
+              </p>
+            </div>
           </div>
         </li>
       </ul>
@@ -80,7 +71,7 @@
       <form class="w3_form_post" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="w3_agileits_main_grid w3l_main_grid">
           <div class="agileits_grid">
-            <h5>Identificaicon * ------------- Fecha de Nacimiento *</h5>
+            <h5>Identificaicon * ------------ Fecha de Nacimiento *</h5>
             <div class="nam">
               <input [(ngModel)]="cliente.identificacion" type="text" formControlName="identificacion"
                 class="form-control" [ngClass]="{ 'is-invalid': submitted && f.identificacion.errors }"
@@ -104,7 +95,7 @@
         </div>
         <div class="w3_agileits_main_grid w3l_main_grid">
           <div class="agileits_grid">
-            <h5>Nombre * -------------------- Apellido *</h5>
+            <h5>Nombre * ------------------- Apellido *</h5>
             <div class="nam">
               <input [(ngModel)]="cliente.nombre" type="text" formControlName="nombre" class="form-control"
                 [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" placeholder="Nombre">
@@ -114,12 +105,12 @@
               </div>
             </div>
             <div class="nam1">
-				<input [(ngModel)]="cliente.apellido" type="text" formControlName="apellido" class="form-control"
-				[ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" placeholder="Apellido">
-	  
-			  <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
-				<div *ngIf="f.apellido.errors.required">Este Campo Es Requerido</div>
-			  </div>
+              <input [(ngModel)]="cliente.apellido" type="text" formControlName="apellido" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" placeholder="Apellido">
+
+              <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
+                <div *ngIf="f.apellido.errors.required">Este Campo Es Requerido</div>
+              </div>
             </div>
             <div class="clearfix"></div>
           </div>

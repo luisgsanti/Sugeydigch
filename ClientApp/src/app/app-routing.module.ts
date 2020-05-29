@@ -16,16 +16,17 @@ import { ServiciosComponent} from './Inicio/servicios/servicios.component'
 import { ConsultarClienteComponent } from './Cliente/consultar-cliente/consultar-cliente.component'
 import { ModificarClienteComponent } from './Cliente/modificar-cliente/modificar-cliente.component'
 import { NavMenuComponent } from './nav-menu/nav-menu.component'
+import { ConsultarHabitacionesComponent} from './Habitaciones/consultar-habitaciones/consultar-habitaciones.component'
 
 const routes: Routes = [
 
   { path:'', component:  CounterComponent, pathMatch: 'full' },
   { path:'Recepcionista', component:RecepcionistaComponent  },
-  { path:'Reserva', component:ReservaComponent  },
-  { path:'ConsultarClientes', component:ConsultarClienteComponent },
-  { path:'ModificarCliente/:id', component:ModificarClienteComponent  },
-  { path:'NavMenu', component:NavMenuComponent }
-
+  { path:'Recepcionista/Reserva', component:ReservaComponent  },
+  { path:'Recepcionista/ConsultarClientes', component:ConsultarClienteComponent },
+  { path:'Recepcionista/ModificarCliente/:id', component:ModificarClienteComponent  },
+  { path:'Recepcionista/NavMenu', component:NavMenuComponent },
+  { path:'Recepcionista/ConsultarHabitaciones', component:ConsultarHabitacionesComponent }
 ];
 
 @NgModule({

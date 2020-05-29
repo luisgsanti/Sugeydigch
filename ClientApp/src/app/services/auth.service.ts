@@ -16,7 +16,7 @@ export class AuthService {
         sessionStorage.setItem('identificontcacion', identificacion);
         sessionStorage.setItem('roles', JSON.stringify([rol]));        
         if(rol === 'RECEPCIONISTA'){
-            this._router.navigate(['/Reserva']);
+            this._router.navigate(['/Recepcionista/Reserva']);
         }else{
             this._router.navigate(['/#']);
         }
