@@ -4,4 +4,5 @@ export class Habitacion {
     tipoDeHabitacion: string;
     estado: string;
     precio: number;
+    numeroCamas: number;
 }

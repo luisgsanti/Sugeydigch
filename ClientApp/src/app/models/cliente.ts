@@ -5,6 +5,5 @@ export class Cliente {
     apellido: string;
     correo: string;
     fechaNacimiento: string;
-    genero: string;
     telefono: string;
 }

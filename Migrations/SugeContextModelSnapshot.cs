@@ -36,10 +36,6 @@ namespace SUGEYDIGCH.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Genero")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Identificacion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -66,6 +62,9 @@ namespace SUGEYDIGCH.Migrations
                     b.Property<string>("Estado")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NumeroCamas")
+                        .HasColumnType("int");
 
                     b.Property<int>("NumeroHabitacion")
                         .HasColumnType("int");

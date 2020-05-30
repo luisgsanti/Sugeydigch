@@ -15,7 +15,6 @@ namespace SUGEYDIGCH.Migrations
                     Identificacion = table.Column<string>(nullable: false),
                     Nombre = table.Column<string>(nullable: false),
                     Apellido = table.Column<string>(nullable: false),
-                    Genero = table.Column<string>(nullable: false),
                     FechaNacimiento = table.Column<string>(nullable: false),
                     Telefono = table.Column<string>(nullable: true),
                     Correo = table.Column<string>(nullable: true)
@@ -34,7 +33,8 @@ namespace SUGEYDIGCH.Migrations
                     NumeroHabitacion = table.Column<int>(nullable: false),
                     TipoDeHabitacion = table.Column<string>(nullable: false),
                     Estado = table.Column<string>(nullable: false),
-                    Precio = table.Column<int>(nullable: false)
+                    Precio = table.Column<int>(nullable: false),
+                    NumeroCamas = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

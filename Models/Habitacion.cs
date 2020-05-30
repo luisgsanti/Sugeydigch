@@ -11,5 +11,6 @@ namespace Sugeydigch.Models
         [Required] public string TipoDeHabitacion { get; set; }
         [Required] public string Estado { get; set; }
         [Required] public int Precio { get; set; }
+        [Required] public int NumeroCamas { get; set; }
     }
 }

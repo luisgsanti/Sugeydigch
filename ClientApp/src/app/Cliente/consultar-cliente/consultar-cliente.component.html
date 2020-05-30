@@ -5,7 +5,7 @@
   <div class="container">
     <h1>Listado de Clientes</h1><br>
 
-    <button class="btn btn-outline-success" type="button" (click)="open()">Nuevo Cliente</button>
+    <button class="btn btn-outline-success new" type="button" (click)="open()">Nuevo Cliente</button>
     <div class="card">
       <div class="card-body cliente">
         <div class="input-group mb-3">
@@ -30,7 +30,6 @@
                 <th scope="col">Apellido</th>
                 <th scope="col">Correo</th>
                 <th scope="col">Fecha de nacimiento</th>
-                <th scope="col">Genero</th>
                 <th scope="col">Telefono</th>
                 <th scope="col">Editar</th>
               </tr>
@@ -43,7 +42,6 @@
                 <td>{{cliente.apellido}}</td>
                 <td>{{cliente.correo}}</td>
                 <td>{{cliente.fechaNacimiento}}</td>
-                <td>{{cliente.genero}}</td>
                 <td>{{cliente.telefono}}</td>
                 <td><a routerLink="#" class="button"><span><i class="far fa-check-circle"></i></span></a></td>
               </tr>

@@ -29,7 +29,7 @@ export class RegistrarseComponent implements OnInit {
       identificacion: ['', Validators.required],
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
-      genero: ['', Validators.required],
+      //genero: ['', Validators.required],
       fechaNacimiento:  ['', Validators.required], 
       correo: [''],
       telefono:  [''],

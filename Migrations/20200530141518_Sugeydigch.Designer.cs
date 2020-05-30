@@ -9,7 +9,7 @@ using Sugeydigch.Models;
 namespace SUGEYDIGCH.Migrations
 {
     [DbContext(typeof(SugeContext))]
-    [Migration("20200514031206_Sugeydigch")]
+    [Migration("20200530141518_Sugeydigch")]
     partial class Sugeydigch
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,10 +35,6 @@ namespace SUGEYDIGCH.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FechaNacimiento")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Genero")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -68,6 +64,9 @@ namespace SUGEYDIGCH.Migrations
                     b.Property<string>("Estado")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NumeroCamas")
+                        .HasColumnType("int");
 
                     b.Property<int>("NumeroHabitacion")
                         .HasColumnType("int");
