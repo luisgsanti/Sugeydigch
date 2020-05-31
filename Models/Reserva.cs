@@ -9,10 +9,9 @@ namespace Sugeydigch.Models
 
         [Required] public string IdCliente { get; set; }
 
-        [Required] public string NumeroReserva { get; set; }
         [Required] public string FechaIngreso { get; set; }
         [Required] public string FechaSalida { get; set; }
-        [Required] public int DiasEstadia { get; set; }
+        //[Required] public int DiasEstadia { get; set; }
         [Required] public string Estado { get; set; }
     }
 }

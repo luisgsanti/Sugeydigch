@@ -6,7 +6,7 @@
     <div class="card">
       <div class="card-body">
         <div class="form-inline">
-          <h5 class="col-sm-2 col-form-label">Fecha de entrada:</h5>
+          <h5 class="col-sm-2 col-form-label">Fecha entrada:</h5>
           <div>
             <form class="form-inline">
               <div class="form-group">
@@ -27,10 +27,8 @@
                                 <pre>State: {{ c2.status }}</pre>
                               -->
           </div>
-        </div>
-        <br>
-        <div class="form-inline">
-          <h5 class="col-sm-2 col-form-label">Fecha de salida:</h5>
+
+          <h5 class="col-sm-2 col-form-label">Fecha salida:</h5>
           <div>
             <form class="form-inline">
               <div class="form-group">
@@ -46,12 +44,52 @@
               </div>
             </form>
     
+            
             <!--
-                                <pre>Model: {{ model2 | json }}</pre>
-                                <pre>State: {{ c2.status }}</pre>
-                              -->
+             <pre>Model: {{ model2 | json }}</pre>
+             <pre>State: {{ c2.status }}</pre>
+            -->
           </div>
         </div>
+        <br>
+
+        <div class="form-inline">
+          
+        </div>
+
+
+        <div class="table-container">
+          <table id="tabla" class="table table-sm table-dark">
+            <thead >
+              <tr >
+                <th scope="col">Numero</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Camas</th>
+                <th scope="col">Precio</th>
+                <th scope="col"><span><i class="far fa-check-circle habi"></i></span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let habitacion of habitaciones | clineteFiltro:searchText;">
+                
+                  <td *ngIf = "habitacion.estado==='DISPONIBLE';">{{habitacion.numeroHabitacion}}</td>
+                  <td *ngIf = "habitacion.estado==='DISPONIBLE';">{{habitacion.tipoDeHabitacion}}</td>
+                  <td *ngIf = "habitacion.estado==='DISPONIBLE';">{{habitacion.numeroCamas}}</td>
+                  <td *ngIf = "habitacion.estado==='DISPONIBLE';">{{habitacion.precio}}</td>
+                  <td *ngIf = "habitacion.estado==='DISPONIBLE';"><label><input type="checkbox"></label></td>
+              
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+        
+          <select >
+              <option *ngFor="let habitacion of habitaciones">{{habitacion.numeroHabitacion}}</option>
+          </select>
+        
+
       </div>
     </div>
     <br>
@@ -62,14 +100,14 @@
             <h5 class="col-sm-2 col-form-label">Clientes</h5>
             <input [(ngModel)]="searchText"  type="text"  class="form-control" placeholder="Filtrar por Identificacion, Nombre, Apellido">
             <div class="input-group-append">
-              <button class="btn btn-outline-info" (click)="getAll()" type="button">Cargar Lista<i class="fas fa-sync-alt"></i></button>
+              <button class="btn btn-outline-info" (click)="getClientes()" type="button">Cargar Lista<i class="fas fa-sync-alt"></i></button>
             </div>
           </div>
   
           <hr>
 
           <div class="table-container">
-            <table id="tabla" class="table-striped tabla">
+            <table id="tablaClientes" class="table-striped tablaClientes">
               <thead>
                 <tr>
                   <th scope="col">#</th>

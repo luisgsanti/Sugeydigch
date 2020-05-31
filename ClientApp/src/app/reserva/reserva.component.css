@@ -30,7 +30,13 @@ th, td{
     width: 100%;
 }
 
-.tabla{
+.table{
+    height: 5px;
+    overflow-y: auto;
+    width: 45%;
+}
+
+.tablaClientes{
     height: 5px;
     overflow-y: auto;
     width: 100%;
@@ -39,6 +45,10 @@ th, td{
 .fa-check-circle{
     color:green;
     display: inline-block;
+}
+
+.habi{
+    color: white;
 }
 
 .fa-calendar-alt{
@@ -62,5 +72,7 @@ h1{
 .fa-sync-alt{
     padding-left: 10px;
 }
+
+
 
 
