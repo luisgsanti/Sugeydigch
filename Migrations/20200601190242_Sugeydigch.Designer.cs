@@ -9,7 +9,7 @@ using Sugeydigch.Models;
 namespace SUGEYDIGCH.Migrations
 {
     [DbContext(typeof(SugeContext))]
-    [Migration("20200530141518_Sugeydigch")]
+    [Migration("20200601190242_Sugeydigch")]
     partial class Sugeydigch
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -117,9 +117,6 @@ namespace SUGEYDIGCH.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("DiasEstadia")
-                        .HasColumnType("int");
-
                     b.Property<string>("Estado")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -132,11 +129,11 @@ namespace SUGEYDIGCH.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IdCliente")
+                    b.Property<string>("Habitaciones")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("NumeroReserva")
+                    b.Property<string>("IdCliente")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

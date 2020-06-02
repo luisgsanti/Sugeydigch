@@ -3,5 +3,6 @@ export class Reserva {
     idCliente: number;
     fechaIngreso: Date;
     fechaSalida: Date;
+    habitaciones: string;
     estado: string;
 }

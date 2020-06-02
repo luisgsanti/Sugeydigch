@@ -64,10 +64,9 @@ namespace SUGEYDIGCH.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IdCliente = table.Column<string>(nullable: false),
-                    NumeroReserva = table.Column<string>(nullable: false),
                     FechaIngreso = table.Column<string>(nullable: false),
                     FechaSalida = table.Column<string>(nullable: false),
-                    DiasEstadia = table.Column<int>(nullable: false),
+                    Habitaciones = table.Column<string>(nullable: false),
                     Estado = table.Column<string>(nullable: false)
                 },
                 constraints: table =>

@@ -7,6 +7,11 @@ import { variable } from '@angular/compiler/src/output/output_ast';
 import { HabitacionService} from '../services/habitacion.service'
 import { Habitacion } from '../models/habitacion'
 
+import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Reserva } from '../models/reserva'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+
 @Component({
   selector: 'app-reserva',
   templateUrl: './reserva.component.html',

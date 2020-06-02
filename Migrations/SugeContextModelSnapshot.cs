@@ -115,9 +115,6 @@ namespace SUGEYDIGCH.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("DiasEstadia")
-                        .HasColumnType("int");
-
                     b.Property<string>("Estado")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -130,11 +127,11 @@ namespace SUGEYDIGCH.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IdCliente")
+                    b.Property<string>("Habitaciones")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("NumeroReserva")
+                    b.Property<string>("IdCliente")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
