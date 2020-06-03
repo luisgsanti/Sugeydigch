@@ -24,19 +24,17 @@
           <table id="tabla" class="table-striped tabla">
             <thead>
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">Identificacion</th>
+                <th scope="col">Cedula</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Correo</th>
-                <th scope="col">Fecha de nacimiento</th>
+                <th scope="col">Fecha de nacimiento <br> (aaaa-mm-dd)</th>
                 <th scope="col">Telefono</th>
                 <th scope="col">Editar</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let cliente of clientes | clineteFiltro:searchText;">
-                <td>{{cliente.id}}</td>
                 <td>{{cliente.identificacion}}</td>
                 <td>{{cliente.nombre}}</td>
                 <td>{{cliente.apellido}}</td>

@@ -1,8 +1,8 @@
 export class Reserva {
     id: number;
-    idCliente: number;
-    fechaIngreso: Date;
-    fechaSalida: Date;
+    idCliente: string;
+    fechaIngreso: string;
+    fechaSalida: string;
     habitaciones: string;
     estado: string;
 }

@@ -5,6 +5,7 @@ import { ClienteService} from '../services/cliente.service'
 import { Cliente } from '../models/cliente'
 import { variable } from '@angular/compiler/src/output/output_ast';
 import { HabitacionService} from '../services/habitacion.service'
+import { ReservaService } from '../services/reserva.service'
 import { Habitacion } from '../models/habitacion'
 
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -19,13 +20,23 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class ReservaComponent implements OnInit {
 
-  constructor(private modalService: NgbModal, private clienteservice: ClienteService, private habitacionservice: HabitacionService) { }
+  constructor(private modalService: NgbModal, private clienteservice: ClienteService, 
+    private habitacionservice: HabitacionService, private formBuilder: FormBuilder,
+    private reservaSercive: ReservaService) { }
 
   clientes: Cliente[];
   habitaciones: Habitacion[];
+  reserva: Reserva;
 
   ngOnInit() {
     this.getHabitaciones();
+    this.registerForm = this.formBuilder.group({
+      fechaIngreso: ['',Validators.required],
+      fechaSalida: ['',Validators.required],
+      habitaciones:  ['', Validators.required], 
+    });
+
+    this.reserva = new Reserva();
   }
 
   open(){
@@ -50,6 +61,41 @@ export class ReservaComponent implements OnInit {
 
   getHabitaciones() {
     this.habitacionservice.getAll().subscribe(habitaciones => this.habitaciones = habitaciones);
+  }
+
+
+
+  registerForm: FormGroup;
+  submitted = false;
+
+  add(id: string) {
+    this.reserva.estado = "ACTIVA";
+    this.reserva.idCliente = id;
+
+    alert(this.reserva.fechaIngreso);
+    alert(this.reserva.fechaSalida);
+    alert(this.reserva.habitaciones);
+
+    
+    this.reservaSercive.add(this.reserva).subscribe();
+    this.onReset();
+  }
+
+  get f() {
+    return this.registerForm.controls;
+  }
+
+  onSubmit(id: string) {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+    }
+    this.add(id);
+  }
+
+  onReset() {
+    this.submitted = false;
+    this.registerForm.reset();
   }
 
 }

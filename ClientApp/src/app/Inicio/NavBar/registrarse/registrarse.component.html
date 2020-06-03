@@ -51,7 +51,7 @@
   
         <div class="col-md-4 mb-3">
           <label class="y">* Fecha de nacimiento:</label>
-          <input [(ngModel)]="cliente.fechaNacimiento" type="text" formControlName="fechaNacimiento" class="form-control"
+          <input [(ngModel)]="cliente.fechaNacimiento" type="date" formControlName="fechaNacimiento" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f.fechaNacimiento.errors }" placeholder="Fecha de Nacimiento">
   
           <div *ngIf="submitted && f.fechaNacimiento.errors" class="invalid-feedback">

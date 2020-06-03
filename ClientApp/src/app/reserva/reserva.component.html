@@ -2,139 +2,138 @@
   <app-nav-menu></app-nav-menu>
   
   <div class="container">
-    <h1>Nueva Reserva</h1><br>
-    <div class="card">
-      <div class="card-body">
-        <div class="form-inline">
-          <h5 class="col-sm-2 col-form-label">Fecha entrada:</h5>
-          <div>
-            <form class="form-inline">
-              <div class="form-group">
-                <div class="input-group">
-                  <input class="form-control" placeholder="dd/mm/yyyy" name="d1" #c1="ngModel" [(ngModel)]="model1"
-                    ngbDatepicker #d1="ngbDatepicker">
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button">
-                      <span><i class="fas fa-calendar-alt"></i></span>
-                    </button>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <h1>Nueva Reserva</h1><br>
+      <div class="card">
+        <div class="card-body">
+          <div class="form-inline">
+            <h5 class="col-sm-2 col-form-label">Fecha entrada:</h5>
+            <div>
+              <form class="form-inline" class="form-inline" [formGroup]="registerForm">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control"  type="date"
+                      [(ngModel)]="reserva.fechaIngreso"  formControlName="fechaIngreso"
+                      [ngClass]="{ 'is-invalid': submitted && f.fechaIngreso.errors }" >
+                      <div *ngIf="submitted && f.fechaIngreso.errors" class="invalid-feedback">
+                        <div *ngIf="f.fechaIngreso.errors.required">Este Campo Es Requerido</div>
+                      </div>
                   </div>
                 </div>
-              </div>
-            </form>
-            
-            <!--
-                                <pre>Model: {{ model2 | json }}</pre>
-                                <pre>State: {{ c2.status }}</pre>
-                              -->
-          </div>
-
-          <h5 class="col-sm-2 col-form-label">Fecha salida:</h5>
-          <div>
-            <form class="form-inline">
-              <div class="form-group">
-                <div class="input-group">
-                  <input class="form-control" placeholder="dd/mm/yyyy" name="d2" #c2="ngModel" [(ngModel)]="model2"
-                    ngbDatepicker #d2="ngbDatepicker">
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button">
-                      <span><i class="fas fa-calendar-alt"></i></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </form>
-    
-            
-            <!--
-             <pre>Model: {{ model2 | json }}</pre>
-             <pre>State: {{ c2.status }}</pre>
-            -->
-          </div>
-        </div>
-        <br>
-
-        <div class="form-inline">
-          
-        </div>
-
-
-        <div class="table-container">
-          <table id="tabla" class="table table-sm table-dark">
-            <thead >
-              <tr >
-                <th scope="col">Numero</th>
-                <th scope="col">Tipo</th>
-                <th scope="col">Camas</th>
-                <th scope="col">Precio</th>
-                <th scope="col"><span><i class="far fa-check-circle habi"></i></span></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let habitacion of habitaciones | clineteFiltro:searchText;">
-                
-                  <td *ngIf = "habitacion.estado==='DISPONIBLE';">{{habitacion.numeroHabitacion}}</td>
-                  <td *ngIf = "habitacion.estado==='DISPONIBLE';">{{habitacion.tipoDeHabitacion}}</td>
-                  <td *ngIf = "habitacion.estado==='DISPONIBLE';">{{habitacion.numeroCamas}}</td>
-                  <td *ngIf = "habitacion.estado==='DISPONIBLE';">{{habitacion.precio}}</td>
-                  <td *ngIf = "habitacion.estado==='DISPONIBLE';"><label><input type="checkbox"></label></td>
+              </form>
               
-              </tr>
-            </tbody>
-          </table>
-        </div>
+              <!--
+                                  <pre>Model: {{ model2 | json }}</pre>
+                                  <pre>State: {{ c2.status }}</pre>
+                                -->
+            </div>
+      
+            
+          </div>
+          <br>
+      
+          <div class="form-inline">
+            <h5 class="col-sm-2 col-form-label">Fecha salida:</h5>
+            <div>
+              <form class="form-inline" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control" type="date"
+                    [(ngModel)]="reserva.fechaSalida" formControlName="fechaSalida"
+                    [ngClass]="{ 'is-invalid': submitted && f.fechaSalida.errors }">
 
-
-        
-          <select >
-              <option *ngFor="let habitacion of habitaciones">{{habitacion.numeroHabitacion}}</option>
-          </select>
-        
-
-      </div>
-    </div>
-    <br>
-    <button class="btn btn-outline-success" type="button" (click)="open()">Nuevo Cliente</button>
-    <div class="card">
-      <div class="card-body cliente">
-        <div class="input-group mb-3">
-            <h5 class="col-sm-2 col-form-label">Clientes</h5>
-            <input [(ngModel)]="searchText"  type="text"  class="form-control" placeholder="Filtrar por Identificacion, Nombre, Apellido">
-            <div class="input-group-append">
-              <button class="btn btn-outline-info" (click)="getClientes()" type="button">Cargar Lista<i class="fas fa-sync-alt"></i></button>
+                    <div *ngIf="submitted && f.fechaSalida.errors" class="invalid-feedback">
+                      <div *ngIf="f.fechaSalida.errors.required">Este Campo Es Requerido</div>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
-  
-          <hr>
-
+      
+      
           <div class="table-container">
-            <table id="tablaClientes" class="table-striped tablaClientes">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Identificacion</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Apellido</th>
-                  <th scope="col">Correo</th>
-                  <th scope="col">Añadir Reserva</th>
+            <table id="tabla" class="table table-sm table-dark">
+              <thead >
+                <tr >
+                  <th scope="col">Numero</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Camas</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col"><span><i class="far fa-check-circle habi"></i></span></th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let cliente of clientes | clineteFiltro:searchText;" >
-                  <td>{{cliente.id}}</td>
-                  <td>{{cliente.identificacion}}</td>
-                  <td>{{cliente.nombre}}</td>
-                  <td>{{cliente.apellido}}</td>
-                  <td>{{cliente.correo}}</td>
-                  <td><a routerLink="#" class="button"><span><i class="far fa-check-circle"></i></span></a></td>
+                <tr *ngFor="let habitacion of habitaciones | clineteFiltro:searchText;">
+                  
+                    <td *ngIf = "habitacion.estado==='DISPONIBLE';">{{habitacion.numeroHabitacion}}</td>
+                    <td *ngIf = "habitacion.estado==='DISPONIBLE';">{{habitacion.tipoDeHabitacion}}</td>
+                    <td *ngIf = "habitacion.estado==='DISPONIBLE';">{{habitacion.numeroCamas}}</td>
+                    <td *ngIf = "habitacion.estado==='DISPONIBLE';">{{habitacion.precio}}</td>
+                    <td *ngIf = "habitacion.estado==='DISPONIBLE';"><label><input type="checkbox"></label></td>
+                
                 </tr>
               </tbody>
             </table>
           </div>
-      </div>
       
-    </div>
-    <br>
-    <br><br>
+      
+          
+            <select [(ngModel)]="reserva.habitaciones" formControlName="habitaciones" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.habitaciones.errors }">
+                <option *ngFor="let habitacion of habitaciones">{{habitacion.numeroHabitacion}}</option>
+            </select>
+            <div *ngIf="submitted && f.habitaciones.errors" class="invalid-feedback">
+              <div *ngIf="f.habitaciones.errors.required">Este Campo Es Requerido</div>
+            </div>
+          
+      
+        </div>
+      </div>
+      <br>
+      <button class="btn btn-outline-success" type="button" (click)="open()">Nuevo Cliente</button>
+      <div class="card">
+        <div class="card-body cliente">
+          <div class="input-group mb-3">
+              <h5 class="col-sm-2 col-form-label">Clientes</h5>
+              <input [(ngModel)]="searchText"  type="text"  class="form-control" placeholder="Filtrar por Identificacion, Nombre, Apellido">
+              <div class="input-group-append">
+                <button class="btn btn-outline-info" (click)="getClientes()" type="button">Cargar Lista<i class="fas fa-sync-alt"></i></button>
+              </div>
+            </div>
+      
+            <hr>
+      
+            <div class="table-container">
+              <table id="tablaClientes" class="table-striped tablaClientes">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Identificacion</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Añadir Reserva</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let cliente of clientes | clineteFiltro:searchText;" >
+                    <td>{{cliente.id}}</td>
+                    <td>{{cliente.identificacion}}</td>
+                    <td>{{cliente.nombre}}</td>
+                    <td>{{cliente.apellido}}</td>
+                    <td>{{cliente.correo}}</td>
+                    <td><button (click)="onSubmit(cliente.identificacion)"><span><i class="far fa-check-circle"></i></span></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+        
+      </div>
+      <br>
+      <br><br>
+    </form>
   </div>
 </div>
 

@@ -17,6 +17,7 @@ import { ConsultarClienteComponent } from './Cliente/consultar-cliente/consultar
 import { ModificarClienteComponent } from './Cliente/modificar-cliente/modificar-cliente.component'
 import { NavMenuComponent } from './nav-menu/nav-menu.component'
 import { ConsultarHabitacionesComponent} from './Habitaciones/consultar-habitaciones/consultar-habitaciones.component'
+import { ConsultarReservasComponent} from './reserva/consultar-reservas/consultar-reservas.component'
 
 const routes: Routes = [
 
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path:'Recepcionista/ConsultarClientes', component:ConsultarClienteComponent },
   { path:'Recepcionista/ModificarCliente/:id', component:ModificarClienteComponent  },
   { path:'Recepcionista/NavMenu', component:NavMenuComponent },
-  { path:'Recepcionista/ConsultarHabitaciones', component:ConsultarHabitacionesComponent }
+  { path:'Recepcionista/ConsultarHabitaciones', component:ConsultarHabitacionesComponent },
+  { path:'Recepcionista/ConsultarReservas', component:ConsultarReservasComponent },
 ];
 
 @NgModule({

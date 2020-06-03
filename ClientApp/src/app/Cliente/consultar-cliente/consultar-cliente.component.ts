@@ -4,6 +4,9 @@ import { RegistrarseComponent } from '../../Inicio/NavBar/registrarse/registrars
 import { ClienteService} from '../../services/cliente.service'
 import { Cliente } from '../../models/cliente'
 
+
+
+
 @Component({
   selector: 'app-consultar-cliente',
   templateUrl: './consultar-cliente.component.html',
@@ -13,8 +16,9 @@ import { Cliente } from '../../models/cliente'
 export class ConsultarClienteComponent implements OnInit {
 
   clientes: Cliente[];
+  
 
-  constructor(private modalService: NgbModal, private clienteservice: ClienteService,) { }
+  constructor(private modalService: NgbModal, private clienteservice: ClienteService,) {  }
 
   ngOnInit() {
     this.getAll();
@@ -30,4 +34,6 @@ export class ConsultarClienteComponent implements OnInit {
     this.clienteservice.getAll().subscribe(clientes => this.clientes = clientes);
   }
 
+  
 }
+
