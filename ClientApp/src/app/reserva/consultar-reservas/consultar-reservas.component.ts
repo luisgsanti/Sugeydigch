@@ -1,19 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ReservaService} from '../../services/reserva.service'
 import { Reserva } from '../../models/reserva'
-
-import { PipeTransform } from '@angular/core';
-import { DecimalPipe } from '@angular/common';
 import { FormControl } from '@angular/forms';
 
 import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-consultar-reservas',
   templateUrl: './consultar-reservas.component.html',
   styleUrls: ['./consultar-reservas.component.css'],
-  providers: [DecimalPipe]
 })
 
 export class ConsultarReservasComponent implements OnInit {
@@ -21,12 +16,7 @@ export class ConsultarReservasComponent implements OnInit {
   reserva$: Observable<Reserva[]>;
   filter = new FormControl('');
 
-  constructor( private reservaSerice: ReservaService,  pipe: DecimalPipe) {
-    this.reserva$ = this.filter.valueChanges.pipe(
-      startWith(''),
-      //map(text => search(text, pipe))
-    );
-   }
+  constructor( private reservaSerice: ReservaService) {}
 
    reservas: Reserva[];
 
@@ -37,8 +27,7 @@ export class ConsultarReservasComponent implements OnInit {
   getAll() {
     this.reservaSerice.getAll().subscribe(reservas => this.reservas = reservas);
   }
-
-  
+ 
 }
 /*
 reservaSerice: ReservaService;

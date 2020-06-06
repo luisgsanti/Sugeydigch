@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
+import { Component, OnInit, Input  } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ClienteService} from '../../services/cliente.service'
@@ -16,10 +16,12 @@ export class ModificarClienteComponent implements OnInit {
 
   closeResult: string;
   modal : NgbModalRef;
-  cliente: Cliente;
   
   registerForm: FormGroup;
   submitted = false;
+
+  @Input() cliente: Cliente;
+
 
   constructor(
     private clienteservice: ClienteService, 
@@ -27,12 +29,13 @@ export class ModificarClienteComponent implements OnInit {
 
     private route: ActivatedRoute,
     private location: Location,
+    public activeModal: NgbActiveModal
     ) { }
 
     
 
     ngOnInit() {
-      this.get();
+      //this.get();
       this.registerForm = this.formBuilder.group({
         identificacion: ['', Validators.required],
         nombre: ['', Validators.required],
@@ -58,22 +61,18 @@ export class ModificarClienteComponent implements OnInit {
 
     update(): void {
       this.clienteservice.update(this.cliente)
-      .subscribe(() => this.goBack());
+      .subscribe(() => this.onReset());
     }
 
     desactivar(){
       //this.docente.estado="INACTIVO";
       this.clienteservice.update(this.cliente)
-      .subscribe(() => this.goBack());
+      .subscribe(() => this.onReset());
     }
 
     delete(): void {
       this.clienteservice.delete(this.cliente)
-      .subscribe(() => this.goBack());
-    }
-
-    goBack(): void {
-      this.location.back();
+      .subscribe(() => this.onReset());
     }
   
     onSubmit() {
@@ -85,8 +84,7 @@ export class ModificarClienteComponent implements OnInit {
     }
   
     onReset() {
-      this.submitted = false;
-      this.registerForm.reset();
+      this.activeModal.close();
     }
 
 

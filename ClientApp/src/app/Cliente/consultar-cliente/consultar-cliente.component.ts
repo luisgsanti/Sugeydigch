@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RegistrarseComponent } from '../../Inicio/NavBar/registrarse/registrarse.component';
 import { ClienteService} from '../../services/cliente.service'
 import { Cliente } from '../../models/cliente'
+import { ModificarClienteComponent } from '../modificar-cliente/modificar-cliente.component'
 
 
 
@@ -28,6 +29,11 @@ export class ConsultarClienteComponent implements OnInit {
     //this.modalService.open(RegistrarseComponent, {centered:true});
     this.modalService.open(RegistrarseComponent, { size: 'lg' });
     //modalRef.componentInstance.docente = docente;
+  }
+
+  update(cliente: Cliente){
+    const modalRef= this.modalService.open(ModificarClienteComponent, { size: 'lg' });
+    modalRef.componentInstance.cliente = cliente;
   }
 
   getAll() {
