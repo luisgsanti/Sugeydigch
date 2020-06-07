@@ -49,36 +49,75 @@ export class ReservaComponent implements OnInit {
     this.clienteservice.getAll().subscribe(clientes => this.clientes = clientes);
   }
 
-  mostrar(){
-    document.getElementById('tabla').style.width = "100%";
-    document.getElementById('tabla').style.display = "block";
-  }
-
-  addHabitacion(){
-    var score1 = 1;
-
-  }
-
   getHabitaciones() {
-    this.habitacionservice.getAll().subscribe(habitaciones => this.habitaciones = habitaciones);
+    this.habitacionservice.getDisponibles().subscribe(habitaciones => this.habitaciones = habitaciones);
   }
-
-
 
   registerForm: FormGroup;
   submitted = false;
 
-  add(id: string) {
-    this.reserva.estado = "ACTIVA";
-    this.reserva.idCliente = id;
+  fechas(): number{
+    var fecha1 = new Date(this.reserva.fechaIngreso);
+    var fecha2 = new Date(this.reserva.fechaSalida);
 
-    alert(this.reserva.fechaIngreso);
-    alert(this.reserva.fechaSalida);
-    alert(this.reserva.habitaciones);
+    if(fecha2.getTime()<=fecha1.getTime()){
+      return null
+    }else{
+      var diferencia = Math.abs(fecha2.getTime()-fecha1.getTime());
+      console.log("diferencia", diferencia);
+      var dias= (diferencia/(1000*60*60*24));
+      console.log("dias", dias);
+      return dias;
+    }
+    
+    
+  }
+
+
+  reservas: Reserva[];
+
+  add(id: string) {
+    
+    var dias=this.fechas();
+    if(dias != null){
+      //alert(dias.toString());
+    }
+
+    var habitacion = this.reserva.habitaciones;
+    var Fecha1 = new Date(this.reserva.fechaIngreso);
+    var Fecha2 = new Date(this.reserva.fechaSalida);
 
     
-    this.reservaSercive.add(this.reserva).subscribe();
-    this.onReset();
+      this.reservaSercive.getAll().subscribe(reservas => {
+        this.reservas = reservas
+        var x=0;
+        this.reservas.forEach(item => {
+          if(item.estado=="ACTIVA"){
+            if(item.habitaciones==habitacion){
+              var Reserva1 = new Date(item.fechaIngreso);
+              var Reserva2 = new Date(item.fechaSalida);
+              if(Fecha1.getTime()>Reserva1.getTime() && Fecha1.getTime()<Reserva2.getTime()){
+                x=x+1;
+              }else{
+                if(Fecha2.getTime()>Reserva1.getTime() && Fecha2.getTime()<Reserva2.getTime()){
+                  x=x+1;
+                }
+              }
+            }
+          }
+        });
+        if(x==0){
+          this.reserva.estado = "ACTIVA";
+          this.reserva.idCliente = id;
+          this.reservaSercive.add(this.reserva).subscribe();
+          this.registerForm.reset();
+        }else{
+          alert("LA HABITACION ELEGIDA NO ESTA DIPONIBLE EN LA FECHA ESTABLECIDA");
+        }
+      });
+    
+
+        
   }
 
   get f() {

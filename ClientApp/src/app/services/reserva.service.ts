@@ -36,10 +36,6 @@ export class ReservaService {
     );
   }
 
-  getId(){
-
-  }
-
   /** GET task by id. Will 404 if id not found */
   get(id: string): Observable<Reserva>
   {

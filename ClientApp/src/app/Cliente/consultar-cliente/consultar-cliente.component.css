@@ -23,7 +23,7 @@ th, td{
     padding: 10px;
 }
 
-.tabla{
+.tablaClientes{
     height: 5px;
     overflow-y: auto;
     width: 100%;

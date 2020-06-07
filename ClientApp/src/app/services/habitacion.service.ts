@@ -34,6 +34,14 @@ export class HabitacionService {
     );
   }
 
+  getDisponibles():Observable<Habitacion[]>
+      {
+        return this.http.get<Habitacion[]>(this.baseUrl+'api/Habitacion/Disponibles').pipe(
+        tap(/*=>this.log('Se Consulta la información')*/),
+        catchError(this.handleError<Habitacion[]>('getAll',[]))
+        );
+      }
+
   /** GET task by id. Will 404 if id not found */
   get(id: number): Observable<Habitacion>
   {

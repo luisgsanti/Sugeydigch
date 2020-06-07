@@ -38,6 +38,12 @@ namespace Sugeydigch.Controllers
         return await _context.Habitaciones.ToListAsync();
         }
 
+        [HttpGet("Disponibles")]
+        public async Task<ActionResult<IEnumerable<Habitacion>>> GetTaskDisponibles()
+        {
+            return await _context.Habitaciones.Where(p=>p.Estado=="DISPONIBLE").ToListAsync();
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Habitacion>>> GetTaskItem(int id)
         {

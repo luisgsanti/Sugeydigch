@@ -6,6 +6,7 @@
 
 .card{
     background: whitesmoke;
+    text-align: center;
 }
 
 th, td{
@@ -51,9 +52,6 @@ th, td{
     color: white;
 }
 
-.fa-calendar-alt{
-    color:black;
-}
 
 .todo{
     background-color: whitesmoke;
@@ -73,6 +71,11 @@ h1{
     padding-left: 10px;
 }
 
+.select{
+    border: none;
+    background: transparent;
+    width: 100%;
+}
 
 
 
