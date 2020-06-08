@@ -18,12 +18,16 @@ import { ModificarClienteComponent } from './Cliente/modificar-cliente/modificar
 import { NavMenuComponent } from './nav-menu/nav-menu.component'
 import { ConsultarHabitacionesComponent} from './Habitaciones/consultar-habitaciones/consultar-habitaciones.component'
 import { ConsultarReservasComponent} from './reserva/consultar-reservas/consultar-reservas.component'
+import { AcompanantesComponent} from './reserva/ProcesarReserva/acompanantes/acompanantes.component'
+import { DatosComponent} from './reserva/ProcesarReserva/datos/datos.component'
 
 const routes: Routes = [
 
   { path:'', component:  CounterComponent, pathMatch: 'full' },
   { path:'Recepcionista', component:RecepcionistaComponent  },
   { path:'Recepcionista/Reserva', component:ReservaComponent  },
+  { path:'Recepcionista/Reserva/ProcesarReserva/Acompanantes', component:AcompanantesComponent  },
+  { path:'Recepcionista/Reserva/ProcesarReserva/Datos', component:DatosComponent},
   { path:'Recepcionista/ConsultarClientes', component:ConsultarClienteComponent },
   { path:'Recepcionista/ModificarCliente/:id', component:ModificarClienteComponent  },
   { path:'Recepcionista/NavMenu', component:NavMenuComponent },

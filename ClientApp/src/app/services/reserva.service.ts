@@ -22,9 +22,9 @@ export class ReservaService {
   /** POST: add a new task to the server */
   add(reserva: Reserva): Observable<Reserva> {
     return this.http.post<Reserva>(this.baseUrl+'api/Reserva', reserva, httpOptions).pipe(
-      tap((newDocente: Reserva) => this.log(`Reserva agregada `/*id= ${newDocente.id}`*/)),
-      catchError(this.handleError<Reserva>('Error Al Agregar Reserva'))
-    )
+      tap((newDocente: Reserva) => this.log(`RESERVA AGREGADA CORRECTAMENTE`/*id= ${newDocente.id}`*/))/*,
+      catchError(this.handleError<Reserva>('Error Al Agregar Reserva')*/)
+    
   }
 
   /** GET Task from the server */

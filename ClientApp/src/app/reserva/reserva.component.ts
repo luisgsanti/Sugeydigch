@@ -83,6 +83,7 @@ export class ReservaComponent implements OnInit {
       //alert(dias.toString());
     }
 
+    var confirmar:boolean;
     var habitacion = this.reserva.habitaciones;
     var Fecha1 = new Date(this.reserva.fechaIngreso);
     var Fecha2 = new Date(this.reserva.fechaSalida);
@@ -101,6 +102,10 @@ export class ReservaComponent implements OnInit {
               }else{
                 if(Fecha2.getTime()>Reserva1.getTime() && Fecha2.getTime()<Reserva2.getTime()){
                   x=x+1;
+                }else{
+                  if(Reserva1.getTime()>Fecha1.getTime() && Reserva1.getTime()<Fecha2.getTime()){
+                    x=x+1;
+                  }
                 }
               }
             }
@@ -114,10 +119,7 @@ export class ReservaComponent implements OnInit {
         }else{
           alert("LA HABITACION ELEGIDA NO ESTA DIPONIBLE EN LA FECHA ESTABLECIDA");
         }
-      });
-    
-
-        
+      });        
   }
 
   get f() {
