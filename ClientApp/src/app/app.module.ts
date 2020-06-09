@@ -20,7 +20,7 @@ import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { ClineteFiltroPipe } from './Filtos/clinete-filtro.pipe';
 import { ConsultarClienteComponent } from './Cliente/consultar-cliente/consultar-cliente.component';
 import { LoginComponent } from './Inicio/login/login.component';
-import { ServiciosComponent } from './Inicio/servicios/servicios.component';
+import { ServiciosComponent } from './reserva/ProcesarReserva/servicios/servicios.component';
 import { HabitacionesComponent } from './Inicio/habitaciones/habitaciones.component';
 import { ContactenosComponent } from './Inicio/contactenos/contactenos.component';
 import { DescuentosComponent } from './Inicio/descuentos/descuentos.component';
@@ -29,6 +29,7 @@ import { ModificarClienteComponent } from './Cliente/modificar-cliente/modificar
 import { ConsultarReservasComponent } from './reserva/consultar-reservas/consultar-reservas.component';
 import { AcompanantesComponent } from './reserva/ProcesarReserva/acompanantes/acompanantes.component';
 import { DatosComponent } from './reserva/ProcesarReserva/datos/datos.component';
+import { DescuentosReservaComponent } from './reserva/ProcesarReserva/descuentos-reserva/descuentos-reserva.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { DatosComponent } from './reserva/ProcesarReserva/datos/datos.component'
     ConsultarReservasComponent,
     AcompanantesComponent,
     DatosComponent,
+    DescuentosReservaComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -12,7 +12,6 @@ import { ReservaComponent } from '../app/reserva/reserva.component'
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { CounterComponent } from './counter/counter.component';
 import { LoginComponent} from './Inicio/login/login.component';
-import { ServiciosComponent} from './Inicio/servicios/servicios.component'
 import { ConsultarClienteComponent } from './Cliente/consultar-cliente/consultar-cliente.component'
 import { ModificarClienteComponent } from './Cliente/modificar-cliente/modificar-cliente.component'
 import { NavMenuComponent } from './nav-menu/nav-menu.component'
@@ -20,6 +19,8 @@ import { ConsultarHabitacionesComponent} from './Habitaciones/consultar-habitaci
 import { ConsultarReservasComponent} from './reserva/consultar-reservas/consultar-reservas.component'
 import { AcompanantesComponent} from './reserva/ProcesarReserva/acompanantes/acompanantes.component'
 import { DatosComponent} from './reserva/ProcesarReserva/datos/datos.component'
+import { ServiciosComponent} from './reserva/ProcesarReserva/servicios/servicios.component'
+import { DescuentosReservaComponent} from './reserva/ProcesarReserva/descuentos-reserva/descuentos-reserva.component'
 
 const routes: Routes = [
 
@@ -28,11 +29,14 @@ const routes: Routes = [
   { path:'Recepcionista/Reserva', component:ReservaComponent  },
   { path:'Recepcionista/Reserva/ProcesarReserva/Acompanantes', component:AcompanantesComponent  },
   { path:'Recepcionista/Reserva/ProcesarReserva/Datos', component:DatosComponent},
+  { path:'Recepcionista/Reserva/ProcesarReserva/Servicios', component:ServiciosComponent},
+  { path:'Recepcionista/Reserva/ProcesarReserva/Descuentos', component:DescuentosReservaComponent},
   { path:'Recepcionista/ConsultarClientes', component:ConsultarClienteComponent },
   { path:'Recepcionista/ModificarCliente/:id', component:ModificarClienteComponent  },
   { path:'Recepcionista/NavMenu', component:NavMenuComponent },
   { path:'Recepcionista/ConsultarHabitaciones', component:ConsultarHabitacionesComponent },
   { path:'Recepcionista/ConsultarReservas', component:ConsultarReservasComponent },
+
 ];
 
 @NgModule({
