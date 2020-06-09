@@ -23,10 +23,10 @@ namespace SUGEYDIGCH
         public void ConfigureServices(IServiceCollection services)
         {
 
+            //services.AddDbContext<SugeContext>(opt =>
+            //opt.UseSqlServer(@"Server=.\;Database=SugeydigchDB;Trusted_Connection=True;"));
             services.AddDbContext<SugeContext>(opt =>
-            opt.UseSqlServer(@"Server=.\;Database=SugeydigchDB;Trusted_Connection=True;"));
-            //services.AddDbContext<SugeydigchContext>(opt =>
-            //opt.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=SugeydigchDB;Trusted_Connection=true;"));
+            opt.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=SugeydigchDB;Trusted_Connection=true;"));
 
 
             services.AddControllersWithViews();
