@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Cliente } from '../../../models/cliente';
+import { Reserva } from '../../../models/reserva';
+import { ClienteService } from '../../../services/cliente.service'
+import { ReservaService } from '../../../services/reserva.service'
 
 @Component({
   selector: 'app-datos',
@@ -7,9 +12,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router) { }
+
+  @Input() reserva: Reserva;
 
   ngOnInit() {
+  }
+
+  funcin(){
+    
   }
 
 }
