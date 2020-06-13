@@ -55,3 +55,8 @@ h1{
 .new{
     width: 100%;
 }
+
+.select{
+    border: none;
+    background: transparent;
+}

@@ -73,7 +73,9 @@ import { DescuentosReservaComponent } from './reserva/ProcesarReserva/descuentos
     LoginComponent, 
     ServiciosComponent,
     HabitacionesComponent,
-    ContactenosComponent
+    ContactenosComponent,
+    DatosComponent,
+    ModificarClienteComponent
   ]
 })
 export class AppModule { }

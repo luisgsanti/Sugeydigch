@@ -4,6 +4,15 @@ import { Cliente } from '../../../models/cliente';
 import { Reserva } from '../../../models/reserva';
 import { ClienteService } from '../../../services/cliente.service'
 import { ReservaService } from '../../../services/reserva.service'
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+
+import{ DescuentosReservaComponent} from '../descuentos-reserva/descuentos-reserva.component'
+import{ ServiciosComponent} from '../servicios/servicios.component'
+import{ AcompanantesComponent} from '../acompanantes/acompanantes.component'
+
+
 
 @Component({
   selector: 'app-datos',
@@ -12,15 +21,55 @@ import { ReservaService } from '../../../services/reserva.service'
 })
 export class DatosComponent implements OnInit {
 
-  constructor(private _router: Router) { }
+  constructor(
+    public activeModal: NgbActiveModal,
+    private modalService: NgbModal,
+    private formBuilder: FormBuilder,
+    private clienteService: ClienteService,
+    ) { }
+
+  modal : NgbModalRef;
+  registerForm: FormGroup;
 
   @Input() reserva: Reserva;
-
+  @Input() cliente: Cliente;
+  
   ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+      idCliente: ['', Validators.required],
+      fechaIngreso: ['', Validators.required],
+      fechaSalida: ['', Validators.required],
+      habitaciones: ['', Validators.required],
+      estado:  ['', Validators.required],
+      
+      identificacion: ['', Validators.required],
+      nombre: ['', Validators.required],
+      apellido: ['', Validators.required],
+      genero: ['', Validators.required],
+      fechaNacimiento:  ['', Validators.required], 
+      correo: [''],
+      telefono:  [''],
+    });
   }
 
-  funcin(){
-    
+
+  Acompanantes(){
+    const modalRef =  this.modalService.open(AcompanantesComponent, { size: 'xl' });
+    modalRef.componentInstance.reserva = this.reserva;
+    this.activeModal.close();
   }
+
+  Servicios(){
+    const modalRef =  this.modalService.open(ServiciosComponent, { size: 'xl' });
+    modalRef.componentInstance.reserva = this.reserva;
+    this.activeModal.close();
+  }
+
+  Descuentos(){
+    const modalRef =  this.modalService.open(DescuentosReservaComponent, { size: 'xl' });
+    modalRef.componentInstance.reserva = this.reserva;
+    this.activeModal.close();
+  }
+ 
 
 }

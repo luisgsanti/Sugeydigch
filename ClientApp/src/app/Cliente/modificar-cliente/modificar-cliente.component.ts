@@ -47,14 +47,6 @@ export class ModificarClienteComponent implements OnInit {
       });
     }
 
-    get(): void {
-      //alert(JSON.stringify(this.route.snapshot.paramMap));
-      const id =
-      +this.route.snapshot.paramMap.get('id');
-      this.clienteservice.get(id)
-      .subscribe(hero => this.cliente = hero);
-    }
-
     get f() {
       return this.registerForm.controls;
     }

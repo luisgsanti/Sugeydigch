@@ -35,11 +35,11 @@ export class ClienteService {
   }
 
   /** GET task by id. Will 404 if id not found */
-  get(id: number): Observable<Cliente>
+  get(id: string): Observable<Cliente>
   {
     const url = `${this.baseUrl + 'api/Cliente'}/${id}`;
     return this.http.get<Cliente>(url).pipe(
-    tap(_ => this.log(`fetched cliente id=${id}`)),
+    tap(/*_ => this.log(`fetched cliente id=${id}`)*/),
     catchError(this.handleError<Cliente>(`getcliente id=${id}`))
     );
   }

@@ -38,9 +38,22 @@ namespace Sugeydigch.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Cliente>>> GetTaskItem(string id)
+        public async Task<ActionResult<Cliente>> GetTaskItem(string id)
         {
-            return await _context.Clientes.Where(p=>p.Identificacion==id).ToListAsync();
+            var lista = await _context.Clientes.Where(p=>p.Identificacion==id).ToListAsync();
+            int x=0;
+            
+            foreach (var item in lista)
+            {
+                x = item.Id;
+            }
+
+            var user = await _context.Clientes.FindAsync(x);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return user;
         }
 
         [HttpPost]

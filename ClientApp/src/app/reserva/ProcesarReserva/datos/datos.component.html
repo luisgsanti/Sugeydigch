@@ -1,147 +1,114 @@
 <div class="todo">
-  <app-nav-menu></app-nav-menu>
+  <!-- <app-nav-menu></app-nav-menu> -->
 
-  <body>
+  <body class="modal-header">
     <div class="barra">
       <a class="logo" href="/"></a>
       <nav>
         <ul class="nav__links">
-          <li><a href="Recepcionista/Reserva/ProcesarReserva/Datos">Datos Reserva</a></li>
-          <li><a href="Recepcionista/Reserva/ProcesarReserva/Acompanantes">Acompañantes</a></li>
-          <li><a href="Recepcionista/Reserva/ProcesarReserva/Servicios">+ Servicios</a></li>
-          <li><a href="Recepcionista/Reserva/ProcesarReserva/Descuentos">+ Descuentos</a></li>
-          <li><a href="#">Generar Factura</a></li>
+          <li><a>Datos Reserva</a></li>
+          <li><a (click)="Acompanantes()">Acompañantes</a></li>
+          <li><a (click)="Servicios()">+ Servicios</a></li>
+          <li><a (click)="Descuentos()">+ Descuentos</a></li>
+          <li><a >Generar Factura</a></li>
         </ul>
       </nav>
       <a class="cta" href="#"></a>
     </div>
   </body>
 
-  <div class="container">
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-      <div>
-        <h1>Datos Personales</h1><br>
-      </div>
-
-      <div class="form-row">
-        <div class="col-md-4 mb-3">
-          <label class="y">Identificacion:</label>
-          <input [(ngModel)]="cliente.identificacion" type="text" formControlName="identificacion" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.identificacion.errors }" placeholder="100324">
-
-          <div *ngIf="submitted && f.identificacion.errors" class="invalid-feedback">
-            <div *ngIf="f.identificacion.errors.required">Este Campo Es Requerido</div>
+  <div class="modal-body">
+    <div class="container">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div>
+          <h1>Datos Personales</h1><br>
+        </div>
+    
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label class="y">Identificacion:</label>
+            <input [(ngModel)]="cliente.identificacion" type="text" formControlName="identificacion" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.identificacion.errors }">
+          </div>
+    
+          <div class="col-md-4 mb-3">
+            <label class="y">Nombre Completo:</label>
+            <input [(ngModel)]="cliente.nombre" type="text" formControlName="nombre" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
+          </div>
+    
+          <div class="col-md-4 mb-3">
+            <label class="y">Apellido Completo:</label>
+            <input [(ngModel)]="cliente.apellido" type="text" formControlName="apellido" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }">
           </div>
         </div>
-
-        <div class="col-md-4 mb-3">
-          <label class="y">Nombre Completo:</label>
-          <input [(ngModel)]="cliente.nombre" type="text" formControlName="nombre" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" placeholder="Luis">
-
-          <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
-            <div *ngIf="f.nombre.errors.required">Este Campo Es Requerido</div>
+    
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label class="y">Fecha de nacimiento:</label>
+            <input [(ngModel)]="cliente.fechaNacimiento" type="text" formControlName="fechaNacimiento"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fechaNacimiento.errors }">
           </div>
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <label class="y">Apellido Completo:</label>
-          <input [(ngModel)]="cliente.apellido" type="text" formControlName="apellido" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" placeholder="Gomez">
-
-          <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
-            <div *ngIf="f.apellido.errors.required">Este Campo Es Requerido</div>
+    
+          <div class="col-md-4 mb-3">
+            <label class="y">Telefono:</label>
+            <input [(ngModel)]="cliente.telefono" [ngModelOptions]="{standalone: true}" type="text" class="form-control">
           </div>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="col-md-4 mb-3">
-          <label class="y">Fecha de nacimiento:</label>
-          <input [(ngModel)]="cliente.fechaNacimiento" type="text" formControlName="fechaNacimiento"
-            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fechaNacimiento.errors }"
-            placeholder="2020-06-09">
-
-          <div *ngIf="submitted && f.fechaNacimiento.errors" class="invalid-feedback">
-            <div *ngIf="f.fechaNacimiento.errors.required">Este Campo Es Requerido</div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <label class="y">Telefono:</label>
-          <input [(ngModel)]="cliente.telefono" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
-            placeholder="1231">
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <label class="y">Correo:</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">@</span>
+    
+          <div class="col-md-4 mb-3">
+            <label class="y">Correo:</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+    
+              <input [(ngModel)]="cliente.correo" [ngModelOptions]="{standalone: true}" type="text" class="form-control">
             </div>
-
-            <input [(ngModel)]="cliente.correo" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
-              placeholder="">
           </div>
         </div>
-      </div>
-      <hr>
-      <div>
-        <h1>Datos De La Reserva</h1><br>
-      </div>
-
-      <div class="form-row">
-        <div class="col-md-4 mb-3">
-          <label class="y">Fecha De Ingreso:</label>
-          <input [(ngModel)]="cliente.identificacion" type="text" formControlName="identificacion" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.identificacion.errors }" placeholder="2020-06-12">
-
-          <div *ngIf="submitted && f.identificacion.errors" class="invalid-feedback">
-            <div *ngIf="f.identificacion.errors.required">Este Campo Es Requerido</div>
+        <hr>
+        <div>
+          <h1>Datos De La Reserva</h1><br>
+        </div>
+    
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label class="y">Fecha De Ingreso:</label>
+            <input [(ngModel)]="reserva.fechaIngreso" type="text" formControlName="fechaIngreso" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.fechaIngreso.errors }">
+          </div>
+    
+          <div class="col-md-4 mb-3">
+            <label class="y">Fecha De Salida:</label>
+            <input [(ngModel)]="reserva.fechaSalida" type="text" formControlName="fechaSalida" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.fechaSalida.errors }" >
+          </div>
+    
+          <div class="col-md-4 mb-3">
+            <label class="y">Habitaciones:</label>
+            <input [(ngModel)]="reserva.habitaciones" type="text" formControlName="habitaciones" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.habitaciones.errors }" >
+  
           </div>
         </div>
+    
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label class="y">Estado:</label>
+            <input [(ngModel)]="reserva.estado" type="text" formControlName="estado"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f.estado.errors }">
 
-        <div class="col-md-4 mb-3">
-          <label class="y">Fecha De Salida:</label>
-          <input [(ngModel)]="cliente.nombre" type="text" formControlName="nombre" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" placeholder="2020-06-13">
-
-          <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
-            <div *ngIf="f.nombre.errors.required">Este Campo Es Requerido</div>
           </div>
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <label class="y">Habitaciones:</label>
-          <input [(ngModel)]="cliente.apellido" type="text" formControlName="apellido" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" placeholder="1">
-
-          <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
-            <div *ngIf="f.apellido.errors.required">Este Campo Es Requerido</div>
+    
+          <div class="col-md-4 mb-3">
+            <label class="y">Dias De Estadia:</label>
+            <input [(ngModel)]="reserva.estado" [ngModelOptions]="{standalone: true}" type="text" class="form-control">
           </div>
+    
         </div>
-      </div>
-
-      <div class="form-row">
-        <div class="col-md-4 mb-3">
-          <label class="y">Estado:</label>
-          <input [(ngModel)]="cliente.fechaNacimiento" type="text" formControlName="fechaNacimiento"
-            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fechaNacimiento.errors }"
-            placeholder="ACTIVA">
-
-          <div *ngIf="submitted && f.fechaNacimiento.errors" class="invalid-feedback">
-            <div *ngIf="f.fechaNacimiento.errors.required">Este Campo Es Requerido</div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <label class="y">Dias De Estadia:</label>
-          <input [(ngModel)]="cliente.telefono" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
-            placeholder="1">
-        </div>
-
-      </div>
-      <br><br>
-    </form>
+        <br><br>
+      </form>
+    </div>
   </div>
 </div>
