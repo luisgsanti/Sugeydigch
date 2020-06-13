@@ -58,6 +58,20 @@ namespace SUGEYDIGCH.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Productos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NombreProdcuto = table.Column<string>(nullable: false),
+                    Precio = table.Column<decimal>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Productos", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Reservas",
                 columns: table => new
                 {
@@ -67,11 +81,28 @@ namespace SUGEYDIGCH.Migrations
                     FechaIngreso = table.Column<string>(nullable: false),
                     FechaSalida = table.Column<string>(nullable: false),
                     Habitaciones = table.Column<string>(nullable: false),
+                    DiasEstadia = table.Column<int>(nullable: false),
                     Estado = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Reservas", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Servicios",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdReserva = table.Column<string>(nullable: false),
+                    NombreServicio = table.Column<string>(nullable: false),
+                    Precio = table.Column<decimal>(nullable: false),
+                    Cantidad = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Servicios", x => x.Id);
                 });
         }
 
@@ -87,7 +118,13 @@ namespace SUGEYDIGCH.Migrations
                 name: "Login");
 
             migrationBuilder.DropTable(
+                name: "Productos");
+
+            migrationBuilder.DropTable(
                 name: "Reservas");
+
+            migrationBuilder.DropTable(
+                name: "Servicios");
         }
     }
 }

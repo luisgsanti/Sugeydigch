@@ -11,7 +11,7 @@ namespace Sugeydigch.Models
         [Required] public string FechaIngreso { get; set; }
         [Required] public string FechaSalida { get; set; }
         [Required] public string Habitaciones { get; set; }
-        //[Required] public int DiasEstadia { get; set; }
+                   public int DiasEstadia { get; set; }
         [Required] public string Estado { get; set; }
     }
 }

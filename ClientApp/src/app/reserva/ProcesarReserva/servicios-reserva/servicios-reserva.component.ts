@@ -6,17 +6,16 @@ import { ReservaService } from '../../../services/reserva.service'
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import{ ServiciosReservaComponent} from '../servicios-reserva/servicios-reserva.component'
+import{ DescuentosReservaComponent} from '../descuentos-reserva/descuentos-reserva.component'
 import{ AcompanantesComponent} from '../acompanantes/acompanantes.component'
 import{ DatosComponent} from '../datos/datos.component'
 
-
 @Component({
-  selector: 'app-descuentos-reserva',
-  templateUrl: './descuentos-reserva.component.html',
-  styleUrls: ['./descuentos-reserva.component.css']
+  selector: 'app-servicios-reserva',
+  templateUrl: './servicios-reserva.component.html',
+  styleUrls: ['./servicios-reserva.component.css']
 })
-export class DescuentosReservaComponent implements OnInit {
+export class ServiciosReservaComponent implements OnInit {
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -26,6 +25,7 @@ export class DescuentosReservaComponent implements OnInit {
   ) { }
 
   @Input() reserva: Reserva;
+
   ngOnInit() {
   }
 
@@ -37,8 +37,8 @@ export class DescuentosReservaComponent implements OnInit {
     this.activeModal.close();
   }
 
-  Servicios(){
-    const modalRef =  this.modalService.open(ServiciosReservaComponent, { size: 'xl' });
+  Descuentos(){
+    const modalRef =  this.modalService.open(DescuentosReservaComponent, { size: 'xl' });
     modalRef.componentInstance.reserva = this.reserva;
     this.activeModal.close();
   }

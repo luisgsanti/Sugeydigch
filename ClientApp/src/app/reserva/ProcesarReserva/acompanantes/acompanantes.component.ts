@@ -6,7 +6,7 @@ import { ReservaService } from '../../../services/reserva.service'
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import{ ServiciosComponent} from '../servicios/servicios.component'
+import{ ServiciosReservaComponent} from '../servicios-reserva/servicios-reserva.component'
 import{ DescuentosReservaComponent} from '../descuentos-reserva/descuentos-reserva.component'
 import{ DatosComponent} from '../datos/datos.component'
 
@@ -38,7 +38,7 @@ export class AcompanantesComponent implements OnInit {
   }
 
   Servicios(){
-    const modalRef =  this.modalService.open(ServiciosComponent, { size: 'xl' });
+    const modalRef =  this.modalService.open(ServiciosReservaComponent, { size: 'xl' });
     modalRef.componentInstance.reserva = this.reserva;
     this.activeModal.close();
   }

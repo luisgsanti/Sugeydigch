@@ -20,7 +20,7 @@ import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { ClineteFiltroPipe } from './Filtos/clinete-filtro.pipe';
 import { ConsultarClienteComponent } from './Cliente/consultar-cliente/consultar-cliente.component';
 import { LoginComponent } from './Inicio/login/login.component';
-import { ServiciosComponent } from './reserva/ProcesarReserva/servicios/servicios.component';
+import { ServiciosComponent } from './Inicio/servicios/servicios.component';
 import { HabitacionesComponent } from './Inicio/habitaciones/habitaciones.component';
 import { ContactenosComponent } from './Inicio/contactenos/contactenos.component';
 import { DescuentosComponent } from './Inicio/descuentos/descuentos.component';
@@ -30,6 +30,8 @@ import { ConsultarReservasComponent } from './reserva/consultar-reservas/consult
 import { AcompanantesComponent } from './reserva/ProcesarReserva/acompanantes/acompanantes.component';
 import { DatosComponent } from './reserva/ProcesarReserva/datos/datos.component';
 import { DescuentosReservaComponent } from './reserva/ProcesarReserva/descuentos-reserva/descuentos-reserva.component';
+import { ServiciosReservaComponent } from './reserva/ProcesarReserva/servicios-reserva/servicios-reserva.component';
+import { ModalHabitacionesComponent } from './Habitaciones/modal-habitaciones/modal-habitaciones.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { DescuentosReservaComponent } from './reserva/ProcesarReserva/descuentos
     AcompanantesComponent,
     DatosComponent,
     DescuentosReservaComponent,
+    ServiciosReservaComponent,
+    ModalHabitacionesComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -75,7 +79,9 @@ import { DescuentosReservaComponent } from './reserva/ProcesarReserva/descuentos
     HabitacionesComponent,
     ContactenosComponent,
     DatosComponent,
-    ModificarClienteComponent
+    ModificarClienteComponent,
+    ModalHabitacionesComponent,
+    ServiciosReservaComponent
   ]
 })
 export class AppModule { }

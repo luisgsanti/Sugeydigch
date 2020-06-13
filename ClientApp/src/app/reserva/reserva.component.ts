@@ -7,11 +7,13 @@ import { variable } from '@angular/compiler/src/output/output_ast';
 import { HabitacionService} from '../services/habitacion.service'
 import { ReservaService } from '../services/reserva.service'
 import { Habitacion } from '../models/habitacion'
+import { ModalHabitacionesComponent} from '../Habitaciones/modal-habitaciones/modal-habitaciones.component'
 
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Reserva } from '../models/reserva'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-reserva',
@@ -50,7 +52,7 @@ export class ReservaComponent implements OnInit {
   }
 
   getHabitaciones() {
-    this.habitacionservice.getDisponibles().subscribe(habitaciones => this.habitaciones = habitaciones);
+    this.habitacionservice.getAll().subscribe(habitaciones => this.habitaciones = habitaciones);
   }
 
   registerForm: FormGroup;
@@ -103,7 +105,7 @@ export class ReservaComponent implements OnInit {
                 if(Fecha2.getTime()>Reserva1.getTime() && Fecha2.getTime()<Reserva2.getTime()){
                   x=x+1;
                 }else{
-                  if(Reserva1.getTime()>Fecha1.getTime() && Reserva1.getTime()<Fecha2.getTime()){
+                  if(Reserva1.getTime()>=Fecha1.getTime() && Reserva1.getTime()<Fecha2.getTime()){
                     x=x+1;
                   }
                 }
@@ -137,6 +139,10 @@ export class ReservaComponent implements OnInit {
   onReset() {
     this.submitted = false;
     this.registerForm.reset();
+  }
+
+  ModalHabitaciones(){
+    const modalRef =  this.modalService.open(ModalHabitacionesComponent, { size: 'lg' });
   }
 
 }

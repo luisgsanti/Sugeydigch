@@ -9,7 +9,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 import{ DescuentosReservaComponent} from '../descuentos-reserva/descuentos-reserva.component'
-import{ ServiciosComponent} from '../servicios/servicios.component'
+import{ ServiciosReservaComponent} from '../servicios-reserva/servicios-reserva.component'
 import{ AcompanantesComponent} from '../acompanantes/acompanantes.component'
 
 
@@ -60,7 +60,7 @@ export class DatosComponent implements OnInit {
   }
 
   Servicios(){
-    const modalRef =  this.modalService.open(ServiciosComponent, { size: 'xl' });
+    const modalRef =  this.modalService.open(ServiciosReservaComponent, { size: 'xl' });
     modalRef.componentInstance.reserva = this.reserva;
     this.activeModal.close();
   }

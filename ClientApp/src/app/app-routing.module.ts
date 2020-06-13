@@ -19,7 +19,6 @@ import { ConsultarHabitacionesComponent} from './Habitaciones/consultar-habitaci
 import { ConsultarReservasComponent} from './reserva/consultar-reservas/consultar-reservas.component'
 import { AcompanantesComponent} from './reserva/ProcesarReserva/acompanantes/acompanantes.component'
 import { DatosComponent} from './reserva/ProcesarReserva/datos/datos.component'
-import { ServiciosComponent} from './reserva/ProcesarReserva/servicios/servicios.component'
 import { DescuentosReservaComponent} from './reserva/ProcesarReserva/descuentos-reserva/descuentos-reserva.component'
 
 const routes: Routes = [
@@ -29,7 +28,6 @@ const routes: Routes = [
   { path:'Recepcionista/Reserva', component:ReservaComponent  },
   { path:'Recepcionista/Reserva/ProcesarReserva/Acompanantes', component:AcompanantesComponent  },
   { path:'Recepcionista/Reserva/ProcesarReserva/Datos', component:DatosComponent},
-  { path:'Recepcionista/Reserva/ProcesarReserva/Servicios', component:ServiciosComponent},
   { path:'Recepcionista/Reserva/ProcesarReserva/Descuentos', component:DescuentosReservaComponent},
   { path:'Recepcionista/ConsultarClientes', component:ConsultarClienteComponent },
   { path:'Recepcionista/ModificarCliente/:id', component:ModificarClienteComponent  },

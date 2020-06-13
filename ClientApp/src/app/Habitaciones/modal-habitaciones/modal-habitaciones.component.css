@@ -4,9 +4,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.card{
-    background: whitesmoke;
-}
 
 th, td{
     font-size: large;
@@ -26,16 +23,6 @@ th, td{
     padding: 10px;
 }
 
-.btn-outline-success{
-    width: 100%;
-}
-
-.table{
-    height: 5px;
-    overflow-y: auto;
-    width: 45%;
-}
-
 .tablaClientes{
     height: 5px;
     overflow-y: auto;
@@ -47,16 +34,10 @@ th, td{
     display: inline-block;
 }
 
-.habi{
-    color: white;
-}
-
-
 .todo{
     background-color: whitesmoke;
    background-size: 100% 100%;
    background-attachment: fixed;
-   margin-left: 250px;
 }
 
 h1{
@@ -70,15 +51,6 @@ h1{
     padding-left: 10px;
 }
 
-.select{
-    border: none;
-    background: transparent;
+.new{
+    width: 100%;
 }
-
-.fa-eye{
-    padding-left: 10px;
-    font-size: 25px;
-}
-
-
-

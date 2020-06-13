@@ -2,7 +2,7 @@
   <app-nav-menu></app-nav-menu>
   
   <div class="container">
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="registerForm">
       <h1>Nueva Reserva</h1><br>
       <div class="card">
         <div class="card-body">
@@ -26,15 +26,16 @@
           </div>
 
           <br>
-          
+         
           <div class="form-inline">
-            <h6 class="col-sm-2 col-form-label">Habitacion:</h6>
+            <h5 class="col-sm-2 col-form-label">Habitacion:</h5>
             <select [(ngModel)]="reserva.habitaciones" formControlName="habitaciones" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f.habitaciones.errors }" style="width: 202px;">
                 <option>Seleccionar</option>
                 <option *ngFor="let habitacion of habitaciones">{{habitacion.numeroHabitacion}}</option>
             </select>
             <div *ngIf="submitted && f.habitaciones.errors" class="invalid-feedback"></div>
+            <a (click)="ModalHabitaciones()"><span><i class="far fa-eye"></i></span></a>
           </div>
 
           <!--
