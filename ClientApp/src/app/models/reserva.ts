@@ -5,4 +5,5 @@ export class Reserva {
     fechaSalida: string;
     habitaciones: string;
     estado: string;
+    diasEstadia: number;
 }

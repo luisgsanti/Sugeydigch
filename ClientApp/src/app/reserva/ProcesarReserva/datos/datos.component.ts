@@ -43,6 +43,7 @@ export class DatosComponent implements OnInit {
       fechaSalida: ['', Validators.required],
       habitaciones: ['', Validators.required],
       estado:  ['', Validators.required],
+      diasEstadia: ['', Validators.required],
       
       identificacion: ['', Validators.required],
       nombre: ['', Validators.required],

@@ -14,6 +14,9 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Reserva } from '../models/reserva'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { from } from 'rxjs';
+import { Servicio} from '../models/servicio'
+import { ServicioService} from '../services/servicio.service'
+import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 
 @Component({
   selector: 'app-reserva',
@@ -22,13 +25,21 @@ import { from } from 'rxjs';
 })
 export class ReservaComponent implements OnInit {
 
-  constructor(private modalService: NgbModal, private clienteservice: ClienteService, 
-    private habitacionservice: HabitacionService, private formBuilder: FormBuilder,
-    private reservaSercive: ReservaService) { }
+  constructor(
+    private modalService: NgbModal,
+     private clienteservice: ClienteService, 
+    private habitacionservice: HabitacionService, 
+    private formBuilder: FormBuilder,
+    private reservaSercive: ReservaService,
+    private servicioService: ServicioService,
+    ) { }
 
   clientes: Cliente[];
   habitaciones: Habitacion[];
   reserva: Reserva;
+
+  servicio: Servicio;
+  
 
   ngOnInit() {
     this.getHabitaciones();
@@ -113,10 +124,31 @@ export class ReservaComponent implements OnInit {
             }
           }
         });
+
         if(x==0){
           this.reserva.estado = "ACTIVA";
           this.reserva.idCliente = id;
-          this.reservaSercive.add(this.reserva).subscribe();
+          
+          var diferencia = Math.abs(Fecha2.getTime()-Fecha1.getTime());
+          var dias= (diferencia/(1000*60*60*24));
+
+          this.reserva.diasEstadia = dias;
+
+          this.reservaSercive.add(this.reserva).subscribe((newReserva: Reserva) => {
+            this.servicio = new Servicio;
+
+            this.servicio.idReserva = newReserva.id;
+            this.servicio.nombreServicio = "HABITACION";
+            this.servicio.cantidad = dias;
+
+            this.habitaciones.forEach(item =>{
+              if(item.numeroHabitacion== parseInt(newReserva.habitaciones)){
+                this.servicio.precio=item.precio;
+                this.servicio.monto = this.servicio.precio* this.servicio.cantidad;
+                this.servicioService.addServicoReserva(this.servicio).subscribe();
+              }
+            });
+          });
           this.registerForm.reset();
         }else{
           alert("LA HABITACION ELEGIDA NO ESTA DIPONIBLE EN LA FECHA ESTABLECIDA");

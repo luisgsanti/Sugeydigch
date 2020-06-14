@@ -24,6 +24,10 @@ export class ServicioService {
       catchError(this.handleError<Servicio>('ERROR AL AGREGAR EL SERVICIO'))*/)    
   }
 
+  addServicoReserva(servicio: Servicio): Observable<Servicio> {
+    return this.http.post<Servicio>(this.baseUrl+'api/Servicio', servicio, httpOptions);
+  }
+
   /** GET Task from the server */
   getAll():Observable<Servicio[]>
   {

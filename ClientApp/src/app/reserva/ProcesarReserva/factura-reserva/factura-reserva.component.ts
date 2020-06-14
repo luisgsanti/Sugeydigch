@@ -48,6 +48,7 @@ export class FacturaReservaComponent implements OnInit {
       fechaIngreso: ['', Validators.required],
       fechaSalida: ['', Validators.required],
       habitaciones: ['', Validators.required],
+      diasEstadia: ['', Validators.required],
       
       identificacion: ['', Validators.required],
       nombre: ['', Validators.required],
