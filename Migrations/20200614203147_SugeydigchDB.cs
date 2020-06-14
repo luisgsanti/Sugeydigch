@@ -98,7 +98,8 @@ namespace SUGEYDIGCH.Migrations
                     IdReserva = table.Column<int>(nullable: false),
                     NombreServicio = table.Column<string>(nullable: false),
                     Precio = table.Column<decimal>(nullable: false),
-                    Cantidad = table.Column<int>(nullable: false)
+                    Cantidad = table.Column<int>(nullable: false),
+                    Monto = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

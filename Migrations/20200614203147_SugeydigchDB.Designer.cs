@@ -9,7 +9,7 @@ using Sugeydigch.Models;
 namespace SUGEYDIGCH.Migrations
 {
     [DbContext(typeof(SugeContext))]
-    [Migration("20200614161547_SugeydigchDB")]
+    [Migration("20200614203147_SugeydigchDB")]
     partial class SugeydigchDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -175,6 +175,9 @@ namespace SUGEYDIGCH.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("IdReserva")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Monto")
                         .HasColumnType("int");
 
                     b.Property<string>("NombreServicio")

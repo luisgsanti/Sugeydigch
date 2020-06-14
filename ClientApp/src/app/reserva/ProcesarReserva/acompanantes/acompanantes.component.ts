@@ -9,6 +9,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import{ ServiciosReservaComponent} from '../servicios-reserva/servicios-reserva.component'
 import{ DescuentosReservaComponent} from '../descuentos-reserva/descuentos-reserva.component'
 import{ DatosComponent} from '../datos/datos.component'
+import{ FacturaReservaComponent} from '../factura-reserva/factura-reserva.component'
 
 @Component({
   selector: 'app-acompanantes',
@@ -51,6 +52,15 @@ export class AcompanantesComponent implements OnInit {
       modalRef.componentInstance.cliente = clientee;
     });
     this.activeModal.close();
+  }
+
+  Facturar(){
+    this.clienteService.get(this.reserva.idCliente).subscribe(clientee => {
+      this.cliente = clientee;
+      const modalRef =  this.modalService.open(FacturaReservaComponent, { size: 'xl' });
+      modalRef.componentInstance.reserva = this.reserva;
+      modalRef.componentInstance.cliente = clientee;
+    });
   }
 
 }

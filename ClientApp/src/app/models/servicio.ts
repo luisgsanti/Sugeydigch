@@ -4,4 +4,6 @@ export class Servicio {
     nombreServicio: string;
     precio: number;
     cantidad: number;
+
+    monto: number;
 }

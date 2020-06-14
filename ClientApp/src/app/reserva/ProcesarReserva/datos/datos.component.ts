@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import{ DescuentosReservaComponent} from '../descuentos-reserva/descuentos-reserva.component'
 import{ ServiciosReservaComponent} from '../servicios-reserva/servicios-reserva.component'
 import{ AcompanantesComponent} from '../acompanantes/acompanantes.component'
+import{ FacturaReservaComponent} from '../factura-reserva/factura-reserva.component'
 
 
 
@@ -70,6 +71,12 @@ export class DatosComponent implements OnInit {
     const modalRef =  this.modalService.open(DescuentosReservaComponent, { size: 'xl' });
     modalRef.componentInstance.reserva = this.reserva;
     this.activeModal.close();
+  }
+
+  Factura(){
+    const modalRef =  this.modalService.open(FacturaReservaComponent, { size: 'xl' });
+    modalRef.componentInstance.reserva = this.reserva;
+    modalRef.componentInstance.cliente = this.cliente;
   }
  
 

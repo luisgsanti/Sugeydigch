@@ -32,6 +32,8 @@ import { DatosComponent } from './reserva/ProcesarReserva/datos/datos.component'
 import { DescuentosReservaComponent } from './reserva/ProcesarReserva/descuentos-reserva/descuentos-reserva.component';
 import { ServiciosReservaComponent } from './reserva/ProcesarReserva/servicios-reserva/servicios-reserva.component';
 import { ModalHabitacionesComponent } from './Habitaciones/modal-habitaciones/modal-habitaciones.component';
+import { FacturaReservaComponent } from './reserva/ProcesarReserva/factura-reserva/factura-reserva.component';
+
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { ModalHabitacionesComponent } from './Habitaciones/modal-habitaciones/mo
     DescuentosReservaComponent,
     ServiciosReservaComponent,
     ModalHabitacionesComponent,
+    FacturaReservaComponent,
+    
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
