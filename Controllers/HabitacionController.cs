@@ -20,15 +20,25 @@ namespace Sugeydigch.Controllers
             
             _context = context;
             
-            /*if (_context.Clientes.Count() == 0)
+            if (_context.Habitaciones.Count() == 0)
             {
                 
                 // Crea un nuevo item si la coleccion esta vacia,
                 // lo que significa que no puedes borrar todos los Items.
-                _context.TaskItems.Add(new TaskItem { Id = 1, Title = "Priorizar el proyecto", Description = "Priorizar", Priority = true });
-                _context.TaskItems.Add(new TaskItem { Id = 2, Title = "Calendario el proyecto", Description = "Priorizar", Priority = true });
+                _context.Habitaciones.Add(new Habitacion {NumeroHabitacion = 1, TipoDeHabitacion = "SIMPLE",
+                                                       Estado = "DISPONIBLE",  Precio = 40000,
+                                                      NumeroCamas = 1 });
+                _context.Habitaciones.Add(new Habitacion {NumeroHabitacion = 2, TipoDeHabitacion = "DOBLE",
+                                                       Estado = "DISPONIBLE",  Precio = 60000,
+                                                      NumeroCamas = 1 });
+                _context.Habitaciones.Add(new Habitacion {NumeroHabitacion = 3, TipoDeHabitacion = "SIMPLE",
+                                                       Estado = "DISPONIBLE",  Precio = 40000,
+                                                      NumeroCamas = 1 });
+                _context.Habitaciones.Add(new Habitacion {NumeroHabitacion = 4, TipoDeHabitacion = "SIMPLE",
+                                                       Estado = "DISPONIBLE",  Precio = 60000,
+                                                      NumeroCamas = 2 });
                 _context.SaveChanges();
-            }*/
+            }
             
         }
         

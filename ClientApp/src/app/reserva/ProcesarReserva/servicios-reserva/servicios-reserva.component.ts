@@ -43,9 +43,11 @@ export class ServiciosReservaComponent implements OnInit {
   @Input() reserva: Reserva;
   servicio:Servicio;
   productos: Producto[];
+  servicios:Servicio[];
 
   ngOnInit() {
     this.getProductos();
+    this.getServicios();
     this.registerForm = this.formBuilder.group({
       nombreServicio: ['',Validators.required],
       cantidad: ['',Validators.required],
@@ -81,17 +83,34 @@ export class ServiciosReservaComponent implements OnInit {
     this.productoService.getAll().subscribe(productos => this.productos = productos);
   }
 
+  getServicios(){
+    this.servicioService.getServicios(this.reserva.id).subscribe(servicios => this.servicios = servicios);
+  }
+
   add() {
-    this.servicio.idReserva= this.reserva.id;
-    this.servicio.precio = 0;
-    console.log(this.servicio);
-    this.servicioService.add(this.servicio).subscribe();
-    this.onReset();
+    
+      if(this.servicio.cantidad<=0){
+      alert("ERROR EN LA CANTIDAD, POR FAVOR VERIFICAR");
+      }else{
+        if(this.servicio.nombreServicio=="Seleccionar" || this.servicio.nombreServicio==""){
+          alert("ERROR AL SELECCIONAR EL PRODUCTO, POR FAVOR VERIFICAR")
+        }else{ this.servicio.idReserva= this.reserva.id;
+        this.productoService.get(this.servicio.nombreServicio).subscribe(productoo => {
+          this.servicio.precio = productoo.precio;
+        } )
+    
+        setTimeout(()=> {
+          this.servicioService.add(this.servicio).subscribe();
+          this.onReset();
+        },1300)}
+      }
+   
   }
 
   onSubmit() {
     this.submitted = true;
     if (this.registerForm.invalid) {
+      alert("ERROR AL AÑADIR SERVICIO, POR FAVOR INTENTELO NUEVAMENTE");
       return;
     }
     this.add();
@@ -100,6 +119,11 @@ export class ServiciosReservaComponent implements OnInit {
   onReset() {
     this.submitted = false;
     this.registerForm.reset();
+  }
+
+  delete(servicio: Servicio): void {
+    this.servicioService.delete(servicio)
+    .subscribe(() => this.onReset());
   }
 
 }

@@ -20,15 +20,23 @@ export class ServicioService {
   /** POST: add a new task to the server */
   add(servicio: Servicio): Observable<Servicio> {
     return this.http.post<Servicio>(this.baseUrl+'api/Servicio', servicio, httpOptions).pipe(
-      tap((newServicio: Servicio) => this.log(`Servicio AGREGADO CORRECTAMENTE`/*id= ${newDocente.id}`*/))/*,
-      catchError(this.handleError<Reserva>('Error Al Agregar Reserva')*/)
-    
+      tap((newServicio: Servicio) => this.log(`SERVICIO AGREGADO CORRECTAMENTE` /*id= ${newServicio.id}`*/))/*,
+      catchError(this.handleError<Servicio>('ERROR AL AGREGAR EL SERVICIO'))*/)    
   }
 
   /** GET Task from the server */
   getAll():Observable<Servicio[]>
   {
     return this.http.get<Servicio[]>(this.baseUrl+'api/Servicio').pipe(
+    tap(/*=>this.log('Se Consulta la información')*/),
+    catchError(this.handleError<Servicio[]>('getAll',[]))
+    );
+  }
+
+  getServicios(id:number):Observable<Servicio[]>
+  {
+    const url = `${this.baseUrl + 'api/Servicio'}/Reserva/${id}`;
+    return this.http.get<Servicio[]>(url).pipe(
     tap(/*=>this.log('Se Consulta la información')*/),
     catchError(this.handleError<Servicio[]>('getAll',[]))
     );
@@ -59,7 +67,7 @@ export class ServicioService {
     const url = `${this.baseUrl + 'api/Servicio'}/${id}`;
     
     return this.http.delete<Servicio>(url, httpOptions).pipe(
-    tap(_ => this.log(`deleted Servicio id=${id}`)),
+    tap(_ => this.log(`SERVICIO ELIMINADO` /*id=${id}`*/)),
     catchError(this.handleError<Servicio>('deleteServicio'))
     );
   }

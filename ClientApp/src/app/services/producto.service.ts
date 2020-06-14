@@ -36,12 +36,12 @@ export class ProductoService {
   }
 
   /** GET task by id. Will 404 if id not found */
-  get(id: string): Observable<Producto>
+  get(nombreProducto: string): Observable<Producto>
   {
-    const url = `${this.baseUrl + 'api/Producto'}/${id}`;
+    const url = `${this.baseUrl + 'api/Producto'}/${nombreProducto}`;
     return this.http.get<Producto>(url).pipe(
-    tap(_ => this.log(`fetched Reserva id=${id}`)),
-    catchError(this.handleError<Producto>(`getReserva id=${id}`))
+    tap(/*_ => this.log(`fetched Producto id=${nombreProducto}`)*/),
+    catchError(this.handleError<Producto>(`getProducto id=${nombreProducto}`))
     );
   }
 
