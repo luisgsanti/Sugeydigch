@@ -16,10 +16,35 @@
     </body>
   
     <div class="modal-body">
-      <div class="container">
+      <div class="container" [formGroup]="registerForm">
         <h1>Servicios</h1><br>
       
-        <button class="btn btn-outline-success new" type="button" (click)="open()">Agregar Nuevo Servicio</button>
+       <div class="card">
+         <br>
+          <div class="form-inline">
+            <h5 class="col-sm-2 col-form-label" style="margin-left: 5%;">Producto:</h5>
+            <select [(ngModel)]="servicio.nombreServicio" formControlName="nombreServicio" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.nombreServicio.errors }" style="width: 202px;">
+                <option>Seleccionar</option>
+                <option *ngFor="let producto of productos">{{producto.nombreProdcuto}}</option>
+            </select>
+            <div *ngIf="submitted && f.nombreServicio.errors" class="invalid-feedback"></div>
+            <a ><span><i class="far fa-eye"></i></span></a>
+         
+            <h5 class="col-sm-2 col-form-label">Cantidad:</h5>
+            <input class="form-control" type="number"
+            [(ngModel)]="servicio.cantidad" formControlName="cantidad"
+            [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }">
+            <div *ngIf="submitted && f.cantidad.errors" class="invalid-feedback"></div>
+          </div>
+          <br>
+
+        <button class="btn btn-outline-success new" type="button" (click)="onSubmit()">Agregar Nuevo Servicio</button>
+        <br>
+         
+       </div>
+        <br>
+      
         <div class="card">
           <div class="card-body cliente">
             <div class="input-group mb-3">

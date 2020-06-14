@@ -6,7 +6,7 @@ namespace Sugeydigch.Models
     public class Servicio
     {
         public int Id { get; set; }
-        [Required] public string IdReserva { get; set; }
+        [Required] public int IdReserva { get; set; }
         
         [Required] public string NombreServicio { get; set; }
         [Required] public decimal Precio { get; set; }

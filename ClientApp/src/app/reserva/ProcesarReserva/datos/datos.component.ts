@@ -36,6 +36,7 @@ export class DatosComponent implements OnInit {
   
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
+      id: ['', Validators.required],
       idCliente: ['', Validators.required],
       fechaIngreso: ['', Validators.required],
       fechaSalida: ['', Validators.required],

@@ -73,6 +73,13 @@
         </div>
     
         <div class="form-row">
+
+          <div class="col-md-4 mb-3">
+            <label class="y">No. Reserva:</label>
+            <input [(ngModel)]="reserva.id" type="text" formControlName="id" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.id.errors }" >
+          </div>
+
           <div class="col-md-4 mb-3">
             <label class="y">Fecha De Ingreso:</label>
             <input [(ngModel)]="reserva.fechaIngreso" type="text" formControlName="fechaIngreso" class="form-control"
@@ -85,15 +92,17 @@
               [ngClass]="{ 'is-invalid': submitted && f.fechaSalida.errors }" >
           </div>
     
+          
+        </div>
+    
+        <div class="form-row">
+
           <div class="col-md-4 mb-3">
             <label class="y">Habitaciones:</label>
             <input [(ngModel)]="reserva.habitaciones" type="text" formControlName="habitaciones" class="form-control"
               [ngClass]="{ 'is-invalid': submitted && f.habitaciones.errors }" >
-  
           </div>
-        </div>
-    
-        <div class="form-row">
+
           <div class="col-md-4 mb-3">
             <label class="y">Estado:</label>
             <input [(ngModel)]="reserva.estado" type="text" formControlName="estado"

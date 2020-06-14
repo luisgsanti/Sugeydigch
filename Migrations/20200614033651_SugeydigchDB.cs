@@ -2,7 +2,7 @@
 
 namespace SUGEYDIGCH.Migrations
 {
-    public partial class Sugeydigch : Migration
+    public partial class SugeydigchDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -95,7 +95,7 @@ namespace SUGEYDIGCH.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IdReserva = table.Column<string>(nullable: false),
+                    IdReserva = table.Column<int>(nullable: false),
                     NombreServicio = table.Column<string>(nullable: false),
                     Precio = table.Column<decimal>(nullable: false),
                     Cantidad = table.Column<int>(nullable: false)

@@ -172,9 +172,8 @@ namespace SUGEYDIGCH.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
-                    b.Property<string>("IdReserva")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("IdReserva")
+                        .HasColumnType("int");
 
                     b.Property<string>("NombreServicio")
                         .IsRequired()

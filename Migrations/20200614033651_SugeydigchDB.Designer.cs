@@ -9,8 +9,8 @@ using Sugeydigch.Models;
 namespace SUGEYDIGCH.Migrations
 {
     [DbContext(typeof(SugeContext))]
-    [Migration("20200613034521_Sugeydigch")]
-    partial class Sugeydigch
+    [Migration("20200614033651_SugeydigchDB")]
+    partial class SugeydigchDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -174,9 +174,8 @@ namespace SUGEYDIGCH.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
-                    b.Property<string>("IdReserva")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("IdReserva")
+                        .HasColumnType("int");
 
                     b.Property<string>("NombreServicio")
                         .IsRequired()
