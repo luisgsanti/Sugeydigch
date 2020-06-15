@@ -47,7 +47,7 @@ namespace SUGEYDIGCH.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Identificacion = table.Column<int>(nullable: false),
+                    Identificacion = table.Column<string>(nullable: false),
                     Usuario = table.Column<string>(nullable: false),
                     Clave = table.Column<string>(nullable: false),
                     Rol = table.Column<string>(nullable: false)

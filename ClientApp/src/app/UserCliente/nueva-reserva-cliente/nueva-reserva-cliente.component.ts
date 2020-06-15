@@ -1,46 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { RegistrarseComponent } from '../Inicio/NavBar/registrarse/registrarse.component';
-import { ClienteService} from '../services/cliente.service'
-import { Cliente } from '../models/cliente'
+import { RegistrarseComponent } from '../../Inicio/NavBar/registrarse/registrarse.component';
+import { ClienteService} from '../../services/cliente.service'
+import { Cliente } from '../../models/cliente'
 import { variable } from '@angular/compiler/src/output/output_ast';
-import { HabitacionService} from '../services/habitacion.service'
-import { ReservaService } from '../services/reserva.service'
-import { Habitacion } from '../models/habitacion'
-import { ModalHabitacionesComponent} from '../Habitaciones/modal-habitaciones/modal-habitaciones.component'
+import { HabitacionService} from '../../services/habitacion.service'
+import { ReservaService } from '../../services/reserva.service'
+import { Habitacion } from '../../models/habitacion'
+import { ModalHabitacionesComponent} from '../../Habitaciones/modal-habitaciones/modal-habitaciones.component'
 
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Reserva } from '../models/reserva'
+import { Reserva } from '../../models/reserva'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { from } from 'rxjs';
-import { Servicio} from '../models/servicio'
-import { ServicioService} from '../services/servicio.service'
+import { Servicio} from '../../models/servicio'
+import { ServicioService} from '../../services/servicio.service'
 import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 
 @Component({
-  selector: 'app-reserva',
-  templateUrl: './reserva.component.html',
-  styleUrls: ['./reserva.component.css']
+  selector: 'app-nueva-reserva-cliente',
+  templateUrl: './nueva-reserva-cliente.component.html',
+  styleUrls: ['./nueva-reserva-cliente.component.css']
 })
-export class ReservaComponent implements OnInit {
+export class NuevaReservaClienteComponent implements OnInit {
 
   constructor(
     private modalService: NgbModal,
-     private clienteservice: ClienteService, 
+    private clienteservice: ClienteService, 
     private habitacionservice: HabitacionService, 
     private formBuilder: FormBuilder,
     private reservaSercive: ReservaService,
     private servicioService: ServicioService,
-    ) { }
+  ) { }
 
   clientes: Cliente[];
   habitaciones: Habitacion[];
   reserva: Reserva;
 
   servicio: Servicio;
-
-  FechaActual:Date;
   
 
   ngOnInit() {
@@ -52,24 +50,12 @@ export class ReservaComponent implements OnInit {
     });
 
     this.reserva = new Reserva();
-
-    let date = new Date()
-
-    let day = date.getDate()
-    let month = date.getMonth() + 1
-    let year = date.getFullYear()
-
-    alert(date);
   }
 
   open(){
     //this.modalService.open(RegistrarseComponent, {centered:true});
     this.modalService.open(RegistrarseComponent, { size: 'lg' });
     //modalRef.componentInstance.docente = docente;
-  }
-
-  getClientes() {
-    this.clienteservice.getAll().subscribe(clientes => this.clientes = clientes);
   }
 
   getHabitaciones() {
@@ -79,36 +65,14 @@ export class ReservaComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
 
-  fechas(): number{
-    var fecha1 = new Date(this.reserva.fechaIngreso);
-    var fecha2 = new Date(this.reserva.fechaSalida);
-
-    if(fecha2.getTime()<=fecha1.getTime()){
-      return null
-    }else{
-      var diferencia = Math.abs(fecha2.getTime()-fecha1.getTime());
-      console.log("diferencia", diferencia);
-      var dias= (diferencia/(1000*60*60*24));
-      console.log("dias", dias);
-      return dias;
-    }
-  }
-
   reservas: Reserva[];
 
   add(id: string) {
     
-    var dias=this.fechas();
-    if(dias != null){
-      //alert(dias.toString());
-    }
-
-    var confirmar:boolean;
     var habitacion = this.reserva.habitaciones;
     var Fecha1 = new Date(this.reserva.fechaIngreso);
     var Fecha2 = new Date(this.reserva.fechaSalida);
 
-    
       this.reservaSercive.getAll().subscribe(reservas => {
         this.reservas = reservas
         var x=0;
@@ -160,19 +124,22 @@ export class ReservaComponent implements OnInit {
         }else{
           alert("LA HABITACION ELEGIDA NO ESTA DIPONIBLE EN LA FECHA ESTABLECIDA");
         }
-      });        
+    });        
   }
 
   get f() {
     return this.registerForm.controls;
   }
 
-  onSubmit(id: string) {
+  x:string;
+
+  onSubmit() {
     this.submitted = true;
     if (this.registerForm.invalid) {
       return;
     }
-    this.add(id);
+    this.x=sessionStorage.getItem('identificontcacion');
+    this.add(this.x);
   }
 
   onReset() {

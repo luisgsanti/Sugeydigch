@@ -18,7 +18,11 @@ export class AuthService {
         if(rol === 'RECEPCIONISTA'){
             this._router.navigate(['/Recepcionista/Reserva']);
         }else{
-            this._router.navigate(['/#']);
+            if(rol === 'CLIENTE'){
+                this._router.navigate(['/Cliente/NuevaReserva']);
+            }else{
+                this._router.navigate(['/#']);
+            }
         }
     }
 

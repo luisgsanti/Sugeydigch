@@ -54,7 +54,7 @@ a:hover, a:focus {
   }
 .rslides img {
   display: block;
-  height: auto;
+  height: 100%;
   float: left;
   width: 100%;
   border: 0;
@@ -225,7 +225,8 @@ nav.navbar.navbar-default {
     background-image: url(./images/hotel.jpg);
    background-size: 100% 100%;
    background-attachment: fixed;
-   padding: 300px 0;
+   padding: 380px 0;
+
    
 }
 

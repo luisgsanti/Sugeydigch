@@ -49,12 +49,13 @@
         <li>
           <div class="slider-info1">
             <div class="textoinfo">
-              <h3>Bienvenidos</h3>
+              <!--<h3>Bienvenidos</h3>
+              
               <p>Un lugar donde se unen el descanso, la buena cocina y el arte. Contamos con habitaciones simples y
                 dobles,
                 todas con amplios espacios y equipadas para su comodidad. Instalaciones en las cuales podra disfutar
                 mientras se relaja en un ambiente familiar.
-              </p>
+              </p>-->
             </div>
           </div>
         </li>
@@ -71,7 +72,7 @@
       <form class="w3_form_post" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="w3_agileits_main_grid w3l_main_grid">
           <div class="agileits_grid">
-            <h5>Identificaicon * ------------ Fecha de Nacimiento *</h5>
+            <h5>Identificacion * ------------ Fecha de Nacimiento *</h5>
             <div class="nam">
               <input [(ngModel)]="cliente.identificacion" type="text" formControlName="identificacion"
                 class="form-control" [ngClass]="{ 'is-invalid': submitted && f.identificacion.errors }"
@@ -82,9 +83,9 @@
               </div>
             </div>
             <div class="nam1">
-              <input [(ngModel)]="cliente.fechaNacimiento" type="text" formControlName="fechaNacimiento"
+              <input [(ngModel)]="cliente.fechaNacimiento" type="date" formControlName="fechaNacimiento"
                 class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fechaNacimiento.errors }"
-                placeholder="Fecha de Nacimiento">
+                placeholder="Fecha de Nacimiento" style="width: 165px;">
 
               <div *ngIf="submitted && f.fechaNacimiento.errors" class="invalid-feedback">
                 <div *ngIf="f.fechaNacimiento.errors.required">Este Campo Es Requerido</div>
@@ -135,6 +136,9 @@
             <div class="nam1">
               <input [(ngModel)]="cliente.telefono" [ngModelOptions]="{standalone: true}" type="text"
                 class="form-control" placeholder="Telefono">
+                <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+                  <div *ngIf="f.telefono.errors.required">Este Campo Es Requerido</div>
+                </div>
             </div>
             <div class="clearfix"></div>
           </div>
@@ -153,8 +157,33 @@
           </div>
         </div>
 
+        
+
+        <div class="w3_agileits_main_grid w3l_main_grid">
+          <div class="agileits_grid">
+            <h5>Usuario * ------------------- Contraseña *</h5>
+            <div class="nam">
+              <input [(ngModel)]="login.usuario" type="text" formControlName="usuario" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.usuario.errors }" placeholder="Usuario">
+
+              <div *ngIf="submitted && f.usuario.errors" class="invalid-feedback">
+                <div *ngIf="f.usuario.errors.required">Este Campo Es Requerido</div>
+              </div>
+            </div>
+            <div class="nam1">
+              <input [(ngModel)]="login.clave" type="password" formControlName="clave" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.clave.errors }" placeholder="Contraseña">
+
+              <div *ngIf="submitted && f.clave.errors" class="invalid-feedback">
+                <div *ngIf="f.clave.errors.required">Este Campo Es Requerido</div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        
         <div class="w3_main_grid">
-          <button class="btn btn-info">Registrarse</button>
+          <button class="btn btn-info" type="submit">Registrarse</button>
           <div class="clearfix"> </div>
         </div>
       </form>

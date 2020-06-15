@@ -31,11 +31,14 @@ export class LoginComponent implements OnInit {
   nombre:string;
   rol:string;
 
+  x: string;
+
   getUsuario(objeto:Login): void {
 
     this.loginService.getUsuario(objeto.usuario).subscribe(aux => {
       
       this.log = aux;
+      this.x = this.log.identificacion;
 
       if(objeto.clave === this.log.clave){
         this.authService.login(this.log.usuario,this.log.rol, this.log.identificacion);

@@ -21,6 +21,7 @@ import { AcompanantesComponent} from './reserva/ProcesarReserva/acompanantes/aco
 import { DatosComponent} from './reserva/ProcesarReserva/datos/datos.component'
 import { DescuentosReservaComponent} from './reserva/ProcesarReserva/descuentos-reserva/descuentos-reserva.component'
 import { FacturaReservaComponent} from './reserva/ProcesarReserva/factura-reserva/factura-reserva.component'
+import { NuevaReservaClienteComponent} from './UserCliente/nueva-reserva-cliente/nueva-reserva-cliente.component'
 
 const routes: Routes = [
 
@@ -35,7 +36,8 @@ const routes: Routes = [
   { path:'Recepcionista/NavMenu', component:NavMenuComponent },
   { path:'Recepcionista/ConsultarHabitaciones', component:ConsultarHabitacionesComponent },
   { path:'Recepcionista/ConsultarReservas', component:ConsultarReservasComponent },
-  { path:'Factura', component:FacturaReservaComponent}
+  { path:'Factura', component:FacturaReservaComponent},
+  { path:'Cliente/NuevaReserva', component:NuevaReservaClienteComponent },
 
 ];
 

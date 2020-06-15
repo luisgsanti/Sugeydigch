@@ -33,6 +33,8 @@ import { DescuentosReservaComponent } from './reserva/ProcesarReserva/descuentos
 import { ServiciosReservaComponent } from './reserva/ProcesarReserva/servicios-reserva/servicios-reserva.component';
 import { ModalHabitacionesComponent } from './Habitaciones/modal-habitaciones/modal-habitaciones.component';
 import { FacturaReservaComponent } from './reserva/ProcesarReserva/factura-reserva/factura-reserva.component';
+import { NavBarClienteComponent } from './UserCliente/nav-bar-cliente/nav-bar-cliente.component';
+import { NuevaReservaClienteComponent } from './UserCliente/nueva-reserva-cliente/nueva-reserva-cliente.component';
 
 
 @NgModule({
@@ -62,6 +64,8 @@ import { FacturaReservaComponent } from './reserva/ProcesarReserva/factura-reser
     ServiciosReservaComponent,
     ModalHabitacionesComponent,
     FacturaReservaComponent,
+    NavBarClienteComponent,
+    NuevaReservaClienteComponent,
     
   ],
   imports: [
@@ -85,7 +89,8 @@ import { FacturaReservaComponent } from './reserva/ProcesarReserva/factura-reser
     DatosComponent,
     ModificarClienteComponent,
     ModalHabitacionesComponent,
-    ServiciosReservaComponent
+    ServiciosReservaComponent,
+    NuevaReservaClienteComponent
   ]
 })
 export class AppModule { }
