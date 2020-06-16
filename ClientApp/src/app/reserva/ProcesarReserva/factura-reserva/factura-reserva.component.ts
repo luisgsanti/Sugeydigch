@@ -32,6 +32,7 @@ export class FacturaReservaComponent implements OnInit {
     private formBuilder: FormBuilder,
     private clienteService: ClienteService,
     private servicioService: ServicioService,
+    private reservaService: ReservaService,
     ) { }
 
     modal : NgbModalRef;
@@ -91,6 +92,12 @@ export class FacturaReservaComponent implements OnInit {
     .save();
 
     alert("DESCARGANDO FACTURA, POR FAVOR ESPERE...");
+  }
+
+  finalizar(){
+    this.reserva.estado="FINALIZADA"
+    this.reservaService.update(this.reserva)
+      .subscribe();
   }
 
 }

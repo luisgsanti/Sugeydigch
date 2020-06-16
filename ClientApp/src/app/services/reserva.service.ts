@@ -50,7 +50,7 @@ export class ReservaService {
    update (reserva: Reserva): Observable<any> {
     const url =`${this.baseUrl + 'api/Reserva'}/${reserva.id}`;
     return this.http.put(url, reserva, httpOptions).pipe(
-    tap(_ => this.log(`updated Reserva id=${reserva.id}`)),
+    tap(_ => this.log(`CHECK OUT COMPLETADO, RESERVA FINALIZADA` /*d=${reserva.id}`*/)),
     catchError(this.handleError<any>('Reserva'))
     );
   }

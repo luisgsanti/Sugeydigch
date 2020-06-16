@@ -57,11 +57,27 @@ namespace Sugeydigch.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Cliente>> PostTaskItem(Cliente item)
+        public async Task<ActionResult<Cliente>> PostTaskItem(Cliente cliente)
         {
-            _context.Clientes.Add(item);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetTaskItem), new { id = item.Id }, item);
+            var lista = await _context.Clientes.ToListAsync();
+            int x=0;
+            
+            foreach (var item in lista)
+            {
+                if(item.Identificacion == cliente.Identificacion){
+                    x = x+1;
+                }
+            }
+
+            if(x!=0){
+                return null;
+            }else{
+                _context.Clientes.Add(cliente);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction(nameof(GetTaskItem), new { id = cliente.Id }, cliente);
+            }
+
+            
         }
 
         

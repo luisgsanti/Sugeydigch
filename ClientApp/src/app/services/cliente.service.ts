@@ -20,7 +20,13 @@ export class ClienteService {
   /** POST: add a new task to the server */
   add(cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(this.baseUrl+'api/Cliente', cliente, httpOptions).pipe(
-      tap((newDocente: Cliente) => this.log(`Cliente agregado `/*id= ${newDocente.id}`*/)),
+      tap((newDocente: Cliente) => {
+        if (newDocente == null){
+          this.log(`ERROR YA EXISTE UN CLIENTE CON LA IDENTIFICACION INGRESADA`);
+        }else{
+          this.log(`CLIENTE AGREGADO `/*id= ${newDocente.id}`*/);
+        }
+      }),
       catchError(this.handleError<Cliente>('Error Al Agregar Cliente'))
     )
   }
