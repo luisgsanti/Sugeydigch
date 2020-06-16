@@ -43,6 +43,12 @@ namespace Sugeydigch.Controllers
             return await _context.Reservas.Where(p=>p.IdCliente==id).ToListAsync();
         }
 
+        [HttpGet("Reservas/{id}")]
+        public async Task<ActionResult<IEnumerable<Reserva>>> GetTaskReservas(string id)
+        {
+            return await _context.Reservas.Where(p=>p.IdCliente==id).ToListAsync();
+        }
+
         [HttpPost]
         public async Task<ActionResult<Reserva>> PostTaskItem(Reserva item)
         {

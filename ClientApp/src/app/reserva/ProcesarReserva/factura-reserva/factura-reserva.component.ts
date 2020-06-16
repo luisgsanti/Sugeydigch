@@ -19,6 +19,7 @@ import { Servicio } from 'src/app/models/servicio';
 import { DetallesFactura } from 'src/app/models/detalles-factura';
 
 import * as html2pdf from 'html2pdf.js';
+import { NumberSymbol } from '@angular/common';
 
 @Component({
   selector: 'app-factura-reserva',
@@ -65,6 +66,7 @@ export class FacturaReservaComponent implements OnInit {
   servicios: Servicio[];
   detalle: DetallesFactura;
   detalles: DetallesFactura[];
+  totalAPagar: number;
 
 
   getDetalles(){
@@ -74,6 +76,7 @@ export class FacturaReservaComponent implements OnInit {
       this.servicios = servicios;
      this.servicios.forEach(item => {
         this.detalle.monto= this.detalle.monto + item.monto;
+        this.totalAPagar=this.detalle.monto;
       });
     });
   }
@@ -95,7 +98,8 @@ export class FacturaReservaComponent implements OnInit {
   }
 
   finalizar(){
-    this.reserva.estado="FINALIZADA"
+    this.reserva.estado="FINALIZADA";
+    this.reserva.totalPagado= this.totalAPagar;
     this.reservaService.update(this.reserva)
       .subscribe();
   }

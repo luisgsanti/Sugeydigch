@@ -82,7 +82,8 @@ namespace SUGEYDIGCH.Migrations
                     FechaSalida = table.Column<string>(nullable: false),
                     Habitaciones = table.Column<string>(nullable: false),
                     DiasEstadia = table.Column<int>(nullable: false),
-                    Estado = table.Column<string>(nullable: false)
+                    Estado = table.Column<string>(nullable: false),
+                    TotalPagado = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

@@ -9,7 +9,7 @@ using Sugeydigch.Models;
 namespace SUGEYDIGCH.Migrations
 {
     [DbContext(typeof(SugeContext))]
-    [Migration("20200615005051_SugeydigchDB")]
+    [Migration("20200616023450_SugeydigchDB")]
     partial class SugeydigchDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -159,6 +159,9 @@ namespace SUGEYDIGCH.Migrations
                     b.Property<string>("IdCliente")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TotalPagado")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

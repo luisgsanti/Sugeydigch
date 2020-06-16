@@ -35,6 +35,7 @@ import { ModalHabitacionesComponent } from './Habitaciones/modal-habitaciones/mo
 import { FacturaReservaComponent } from './reserva/ProcesarReserva/factura-reserva/factura-reserva.component';
 import { NavBarClienteComponent } from './UserCliente/nav-bar-cliente/nav-bar-cliente.component';
 import { NuevaReservaClienteComponent } from './UserCliente/nueva-reserva-cliente/nueva-reserva-cliente.component';
+import { MisReservasClienteComponent } from './UserCliente/mis-reservas-cliente/mis-reservas-cliente.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { NuevaReservaClienteComponent } from './UserCliente/nueva-reserva-client
     FacturaReservaComponent,
     NavBarClienteComponent,
     NuevaReservaClienteComponent,
+    MisReservasClienteComponent,
     
   ],
   imports: [

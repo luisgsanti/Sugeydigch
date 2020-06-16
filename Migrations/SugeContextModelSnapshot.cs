@@ -158,6 +158,9 @@ namespace SUGEYDIGCH.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TotalPagado")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Reservas");

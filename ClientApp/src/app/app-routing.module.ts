@@ -22,6 +22,7 @@ import { DatosComponent} from './reserva/ProcesarReserva/datos/datos.component'
 import { DescuentosReservaComponent} from './reserva/ProcesarReserva/descuentos-reserva/descuentos-reserva.component'
 import { FacturaReservaComponent} from './reserva/ProcesarReserva/factura-reserva/factura-reserva.component'
 import { NuevaReservaClienteComponent} from './UserCliente/nueva-reserva-cliente/nueva-reserva-cliente.component'
+import { MisReservasClienteComponent} from './UserCliente/mis-reservas-cliente/mis-reservas-cliente.component'
 
 const routes: Routes = [
 
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path:'Recepcionista/ConsultarReservas', component:ConsultarReservasComponent },
   { path:'Factura', component:FacturaReservaComponent},
   { path:'Cliente/NuevaReserva', component:NuevaReservaClienteComponent },
+  { path:'Cliente/MisReservas', component:MisReservasClienteComponent },
 
 ];
 

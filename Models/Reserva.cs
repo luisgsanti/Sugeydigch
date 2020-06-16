@@ -13,5 +13,6 @@ namespace Sugeydigch.Models
         [Required] public string Habitaciones { get; set; }
                    public int DiasEstadia { get; set; }
         [Required] public string Estado { get; set; }
+                   public int TotalPagado { get; set; }
     }
 }

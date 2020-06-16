@@ -24,7 +24,7 @@ export class ClienteService {
         if (newDocente == null){
           this.log(`ERROR YA EXISTE UN CLIENTE CON LA IDENTIFICACION INGRESADA`);
         }else{
-          this.log(`CLIENTE AGREGADO `/*id= ${newDocente.id}`*/);
+          this.log(`REGISTRO EXITOSO`/*id= ${newDocente.id}`*/);
         }
       }),
       catchError(this.handleError<Cliente>('Error Al Agregar Cliente'))

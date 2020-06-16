@@ -6,4 +6,5 @@ export class Reserva {
     habitaciones: string;
     estado: string;
     diasEstadia: number;
+    totalPagado: number;
 }
