@@ -37,6 +37,7 @@ import { NavBarClienteComponent } from './UserCliente/nav-bar-cliente/nav-bar-cl
 import { NuevaReservaClienteComponent } from './UserCliente/nueva-reserva-cliente/nueva-reserva-cliente.component';
 import { MisReservasClienteComponent } from './UserCliente/mis-reservas-cliente/mis-reservas-cliente.component';
 import { MiCuentaClienteComponent } from './UserCliente/mi-cuenta-cliente/mi-cuenta-cliente.component';
+import { ModalConsultarReservaComponent } from './reserva/modal-consultar-reserva/modal-consultar-reserva.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { MiCuentaClienteComponent } from './UserCliente/mi-cuenta-cliente/mi-cue
     NuevaReservaClienteComponent,
     MisReservasClienteComponent,
     MiCuentaClienteComponent,
+    ModalConsultarReservaComponent,
     
   ],
   imports: [
@@ -95,7 +97,8 @@ import { MiCuentaClienteComponent } from './UserCliente/mi-cuenta-cliente/mi-cue
     ModalHabitacionesComponent,
     ServiciosReservaComponent,
     NuevaReservaClienteComponent,
-    MiCuentaClienteComponent
+    MiCuentaClienteComponent,
+    ModalConsultarReservaComponent
   ]
 })
 export class AppModule { }

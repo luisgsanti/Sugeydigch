@@ -45,6 +45,15 @@ export class ReservaService {
     );
   }
 
+  getReservasActivas():Observable<Reserva[]>
+  {
+    const url = `${this.baseUrl + 'api/Reserva'}/Activas`;
+    return this.http.get<Reserva[]>(url).pipe(
+    tap(/*=>this.log('Se Consulta la información')*/),
+    catchError(this.handleError<Reserva[]>('getAll',[]))
+    );
+  }
+
   /** GET task by id. Will 404 if id not found */
   get(id: string): Observable<Reserva>
   {

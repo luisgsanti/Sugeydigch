@@ -2,8 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cliente } from '../../../models/cliente';
 import { Reserva } from '../../../models/reserva';
+import { Habitacion } from '../../../models/habitacion';
 import { ClienteService } from '../../../services/cliente.service'
 import { ReservaService } from '../../../services/reserva.service'
+import { HabitacionService } from '../../../services/habitacion.service'
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -19,7 +21,6 @@ import { Servicio } from 'src/app/models/servicio';
 import { DetallesFactura } from 'src/app/models/detalles-factura';
 
 import * as html2pdf from 'html2pdf.js';
-import { NumberSymbol } from '@angular/common';
 
 @Component({
   selector: 'app-factura-reserva',
@@ -34,6 +35,7 @@ export class FacturaReservaComponent implements OnInit {
     private clienteService: ClienteService,
     private servicioService: ServicioService,
     private reservaService: ReservaService,
+    private habitacionService: HabitacionService,
     ) { }
 
     modal : NgbModalRef;
@@ -97,11 +99,23 @@ export class FacturaReservaComponent implements OnInit {
     alert("DESCARGANDO FACTURA, POR FAVOR ESPERE...");
   }
 
+  habitaciones: Habitacion[];
+
   finalizar(){
     this.reserva.estado="FINALIZADA";
     this.reserva.totalPagado= this.totalAPagar;
     this.reservaService.update(this.reserva)
       .subscribe();
+    this.habitacionService.getAll().subscribe(habitaciones => {this.habitaciones = habitaciones
+      this.habitaciones.forEach(item =>{
+        if(item.numeroHabitacion== parseInt(this.reserva.habitaciones)){
+          
+          item.estado = "DISPONIBLE";
+          this.habitacionService.update(item).subscribe();
+
+        }
+      });
+    });
   }
 
 }
