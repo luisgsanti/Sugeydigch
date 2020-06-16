@@ -20,7 +20,7 @@ export class LoginService {
 
   addLogin (loger: Login): Observable<Login> {
     return this.http.post<Login>(this.baseUrl+'api/Login', loger, httpOptions).pipe(
-    tap((newLogin: Login) => this.log(`NO OLVIDAR \n\nUSUARIO: ${newLogin.usuario} \nCLAVE: ${newLogin.clave}`)),
+    tap((newLogin: Login) => this.log(`Recuerde\nUsuario: ${newLogin.usuario} \nContraseña: ${newLogin.clave}`)),
     catchError(this.handleError<Login>('addLogin'))
     );
   }

@@ -8,6 +8,7 @@ import { HabitacionService} from '../../services/habitacion.service'
 import { ReservaService } from '../../services/reserva.service'
 import { Habitacion } from '../../models/habitacion'
 import { ModalHabitacionesComponent} from '../../Habitaciones/modal-habitaciones/modal-habitaciones.component'
+import { ModalConsultarReservaComponent} from '../../reserva/modal-consultar-reserva/modal-consultar-reserva.component';
 
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
@@ -173,6 +174,8 @@ export class NuevaReservaClienteComponent implements OnInit {
     this.modalService.open(ModalHabitacionesComponent, { size: 'lg' });
   }
 
+  ModalReservas(){
+    this.modalService.open(ModalConsultarReservaComponent, { size: 'lg' });
+  }
   
-
 }

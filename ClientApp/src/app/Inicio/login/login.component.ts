@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         //alert(JSON.stringify("Ha sido logeado con exito: " + this.log.usuario));
         this.close();
       }else{
-        alert("Usuario o Clave Incorrecto");
+        alert("USUARIO O CONTRASEÑA INCORRECTOS");
       }
     });
   }
