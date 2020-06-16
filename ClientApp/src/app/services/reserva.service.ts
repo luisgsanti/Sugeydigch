@@ -64,6 +64,14 @@ export class ReservaService {
     );
   }
 
+  cambiarEstato (reserva: Reserva): Observable<any> {
+    const url =`${this.baseUrl + 'api/Reserva'}/${reserva.id}`;
+    return this.http.put(url, reserva, httpOptions).pipe(
+    tap(_ => this.log(`EL ESTADO DE LA RESERVA HA SIDO MODIFICADO` /*d=${reserva.id}`*/)),
+    catchError(this.handleError<any>('Reserva'))
+    );
+  }
+
   /** DELETE: delete the task from the server */
   delete (reserva: Reserva | number): Observable<Reserva> {
     const id = typeof reserva === 'number' ? reserva : reserva.id;

@@ -35,7 +35,12 @@
                 <option *ngFor="let habitacion of habitaciones">{{habitacion.numeroHabitacion}}</option>
             </select>
             <div *ngIf="submitted && f.habitaciones.errors" class="invalid-feedback"></div>
-            <a (click)="ModalHabitaciones()"><span><i class="far fa-eye"></i></span></a>
+            
+          </div>
+          <br>
+          <div class="form-inline">
+            <a (click)="ModalHabitaciones()"><span><i class="fas fa-bed"></i></span></a>
+            <a (click)="ModalHabitaciones()"><span><i class="fas fa-hotel"></i></span></a>
           </div>
 
           <!--

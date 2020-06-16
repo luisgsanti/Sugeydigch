@@ -102,7 +102,7 @@ export class ReservaComponent implements OnInit {
     }
   }*/
 
-  add(id: string) {
+  add(id: string, fechaActual: Date) {
     
     var dias=this.fechas();
     if(dias != null){
@@ -119,7 +119,7 @@ export class ReservaComponent implements OnInit {
         this.reservas = reservas
         var x=0;
         this.reservas.forEach(item => {
-          if(item.estado=="ACTIVA"){
+          if(item.estado=="ACTIVA" || item.estado=="EN ESPERA"){
             if(item.habitaciones==habitacion){
               var Reserva1 = new Date(item.fechaIngreso);
               var Reserva2 = new Date(item.fechaSalida);
@@ -139,7 +139,12 @@ export class ReservaComponent implements OnInit {
         });
 
         if(x==0){
-          this.reserva.estado = "ACTIVA";
+          if(Fecha1.getDate()==fechaActual.getDate()){
+            this.reserva.estado = "ACTIVA";
+          }else{
+            this.reserva.estado = "EN ESPERA";
+          }
+          
           this.reserva.idCliente = id;
           
           var diferencia = Math.abs(Fecha2.getTime()-Fecha1.getTime());
@@ -156,6 +161,11 @@ export class ReservaComponent implements OnInit {
 
             this.habitaciones.forEach(item =>{
               if(item.numeroHabitacion== parseInt(newReserva.habitaciones)){
+                
+                if(Fecha1.getDate()==fechaActual.getDate()){
+                  item.estado = "OCUPADA";
+                  this.habitacionservice.update(item).subscribe();
+                }
                 this.servicio.precio=item.precio;
                 this.servicio.monto = this.servicio.precio* this.servicio.cantidad;
                 this.servicioService.addServicoReserva(this.servicio).subscribe();
@@ -183,14 +193,15 @@ export class ReservaComponent implements OnInit {
     let day = date.getDate()
     let month = date.getMonth() + 1
     let year = date.getFullYear()
-    var fefe = year+'-'+month+'-'+day;
+    var fefe = year+'-'+month+'-'+(day-1);
     var fechaActual=new Date(fefe);
+
     var Fecha1 = new Date(this.reserva.fechaIngreso);
     var Fecha2 = new Date(this.reserva.fechaSalida);
     if(Fecha1.getTime()<fechaActual.getTime() || Fecha1.getTime()>=Fecha2.getTime()){
       alert("ERROR, FECHAS INCONSISTENTES");
     }else{
-      this.add(id);
+      this.add(id, fechaActual);
     }
   }
 

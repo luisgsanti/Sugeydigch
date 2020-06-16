@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RegistrarseComponent } from '../Inicio/NavBar/registrarse/registrarse.component';
+import { AuthService} from '../services/auth.service'
 
 @Component({
   selector: 'app-nav-menu',
@@ -9,7 +10,10 @@ import { RegistrarseComponent } from '../Inicio/NavBar/registrarse/registrarse.c
 })
 export class NavMenuComponent {
 
-  constructor(private modalService: NgbModal){}
+  constructor(
+    private modalService: NgbModal,
+    private authService: AuthService,
+    ){}
 
   open(){
     //this.modalService.open(RegistrarseComponent, {centered:true});
@@ -27,7 +31,7 @@ export class NavMenuComponent {
     this.isExpanded = !this.isExpanded;
   }
 
-  entrar(){
-    
+  logOut(){
+    this.authService.logout();
   }
 }

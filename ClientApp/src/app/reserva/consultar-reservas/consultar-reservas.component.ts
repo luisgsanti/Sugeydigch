@@ -51,6 +51,11 @@ export class ConsultarReservasComponent implements OnInit {
       },1300)
     });
   }
+
+  delete(reserva: Reserva): void {
+    reserva.estado="CANCELADA";
+    this.reservaSerice.cambiarEstato(reserva).subscribe(() => this.getAll());
+  }
  
 }
 /*

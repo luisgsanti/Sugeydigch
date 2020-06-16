@@ -24,7 +24,8 @@
                   <th scope="col">Salida</th>
                   <th scope="col">Habitaciones</th>
                   <th scope="col">Estado</th>
-                  <th scope="col">Procesar Reserva</th>
+                  <th scope="col">Procesar <br>Reserva</th>
+                  <th scope="col">Cancelar <br>Reserva</th>
                 </tr>
               </thead>
               <tbody>
@@ -35,6 +36,7 @@
                   <td>{{reserva.habitaciones}}</td>
                   <td>{{reserva.estado}}</td>
                   <td><button class="select" (click)="procesarReserva(reserva)"><span><i class="far fa-check-circle"></i></span></button></td>
+                  <td *ngIf="reserva.estado=='EN ESPERA';"><button class="button" (click)="delete(reserva)" ><span><i class="fas fa-minus-circle"></i></span></button></td>
                 </tr>
               </tbody>
             </table>

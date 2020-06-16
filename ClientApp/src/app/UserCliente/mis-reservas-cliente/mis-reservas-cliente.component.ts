@@ -33,4 +33,9 @@ export class MisReservasClienteComponent implements OnInit {
     this.reservaSerice.getMisReservas(this.x).subscribe(reservas => this.reservas = reservas);
   }
 
+  delete(reserva: Reserva): void {
+    reserva.estado="CANCELADA";
+    this.reservaSerice.cambiarEstato(reserva).subscribe(() => this.getAll());
+  }
+
 }

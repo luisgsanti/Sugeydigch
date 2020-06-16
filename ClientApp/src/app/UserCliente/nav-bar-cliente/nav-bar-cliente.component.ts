@@ -1,24 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MiCuentaClienteComponent } from '../../UserCliente/mi-cuenta-cliente/mi-cuenta-cliente.component'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { RegistrarseComponent } from '../../Inicio/NavBar/registrarse/registrarse.component';
 import { ClienteService} from '../../services/cliente.service'
 import { LoginService} from '../../services/login.service'
-import { Cliente } from '../../models/cliente'
-import { variable } from '@angular/compiler/src/output/output_ast';
-import { HabitacionService} from '../../services/habitacion.service'
-import { ReservaService } from '../../services/reserva.service'
-import { Habitacion } from '../../models/habitacion'
-import { ModalHabitacionesComponent} from '../../Habitaciones/modal-habitaciones/modal-habitaciones.component'
 
-import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Reserva } from '../../models/reserva'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { from } from 'rxjs';
-import { Servicio} from '../../models/servicio'
-import { ServicioService} from '../../services/servicio.service'
-import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
+import { AuthService} from '../../services/auth.service'
+
 
 @Component({
   selector: 'app-nav-bar-cliente',
@@ -31,6 +18,7 @@ export class NavBarClienteComponent implements OnInit {
     private modalService: NgbModal,
     private clienteService: ClienteService,
     private loginService: LoginService,
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
@@ -49,6 +37,10 @@ export class NavBarClienteComponent implements OnInit {
         modalRef.componentInstance.login = login;
       });
     });
+  }
+
+  logOut(){
+    this.authService.logout();
   }
 
 }

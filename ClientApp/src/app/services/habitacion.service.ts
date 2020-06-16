@@ -56,7 +56,7 @@ export class HabitacionService {
    update (habitacion: Habitacion): Observable<any> {
     const url =`${this.baseUrl + 'api/Habitacion'}/${habitacion.id}`;
     return this.http.put(url, habitacion, httpOptions).pipe(
-    tap(_ => this.log(`updated cliente identificacion=${habitacion.id}`)),
+    tap(/*_ => this.log(`updated cliente identificacion=${habitacion.id}`)*/),
     catchError(this.handleError<any>('cliente'))
     );
   }

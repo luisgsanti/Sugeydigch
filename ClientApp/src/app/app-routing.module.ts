@@ -27,6 +27,7 @@ import { MisReservasClienteComponent} from './UserCliente/mis-reservas-cliente/m
 const routes: Routes = [
 
   { path:'', component:  CounterComponent, pathMatch: 'full' },
+  { path:'Inicio', component:  CounterComponent },
   { path:'Recepcionista', component:RecepcionistaComponent  },
   { path:'Recepcionista/Reserva', component:ReservaComponent  },
   { path:'Recepcionista/Reserva/ProcesarReserva/Acompanantes', component:AcompanantesComponent  },

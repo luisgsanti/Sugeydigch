@@ -11,7 +11,7 @@ h4,h5,h6{
 
 h1,h2,h3{
     font-family: 'Playfair Display', serif;
-
+    
 }
 
 body p{
@@ -64,7 +64,8 @@ a:hover, a:focus {
 .linkEffects ul{
 	margin:0;
 	padding:0;
-	text-align:center;
+    text-align:center;
+    margin-left: 110px;
 }
 .linkEffects li{
 	list-style:none;
@@ -78,7 +79,8 @@ a:hover, a:focus {
 	position: relative;
 	display: inline-block;
 	outline: none;
-	color: #FFF;
+    color:black;
+    font-weight: bold;
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -112,7 +114,7 @@ a:hover, a:focus {
     position: absolute;
     top: 100%;
     content: attr(data-link-alt);
-    color: rgb(0, 119, 255);
+    color: bl;
     font-weight: bold;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -139,7 +141,7 @@ a:hover, a:focus {
    margin: 0 0.5em;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #fff !important;
+    color: black !important;
 	font-size: 1.2em;
 	padding: 1.8em 1em;
     position: relative;
@@ -176,7 +178,7 @@ a:hover, a:focus {
 }
 
 nav.linkEffects.linkHoverEffect_2 ul li a.active {
-    color: rgb(0, 119, 255) !important;
+    color: black !important;
     font-weight: bold;
 }
 /*-- //top-nav --*/
@@ -233,7 +235,7 @@ nav.navbar.navbar-default {
 .slider-info h3, .slider-info1 h3, .slider-info2 h3 {
     font-size: 45px;
     font-weight: 600;
-    color: rgb(0, 119, 255);
+    color: black;
     text-transform: uppercase;
     /* margin: 20px 0px; */
     width: 50%;
@@ -389,7 +391,7 @@ font-weight:600;
 .titulo{
     text-align: center;
     font-size: 80px;
-    color: white;
+    color: black;
     /*-webkit-text-stroke: 2px #e25111;*/
 }
 

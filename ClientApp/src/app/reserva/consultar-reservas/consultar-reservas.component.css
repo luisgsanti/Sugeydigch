@@ -60,3 +60,13 @@ h1{
     border: none;
     background: transparent;
 }
+
+.fa-minus-circle{
+    color:red;
+    display: inline-block;
+  }
+  
+  button{
+   border: none;
+   background: transparent;
+  }

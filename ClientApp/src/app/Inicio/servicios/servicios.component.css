@@ -6,11 +6,12 @@
   font-family: 'Montserrat',sans-serif;
 }
 
-/*body{
-  background-image: url(../../../assets/servicios2.jpg);
+body{
+  background-image: url(../../../assets/fondocolores.jpg);
   background-size: 100% 100%;
   background-attachment: fixed;
-}*/
+}
+
 .cards{
   max-width: 1100px;
   margin: 0 auto;
