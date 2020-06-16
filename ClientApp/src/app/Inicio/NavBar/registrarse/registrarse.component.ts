@@ -2,7 +2,9 @@ import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ClienteService} from '../../../services/cliente.service'
+import { LoginService} from '../../../services/login.service'
 import { Cliente } from '../../../models/cliente'
+import { Login } from '../../../models/login'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 @Component({
@@ -19,10 +21,16 @@ export class RegistrarseComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
 
-  constructor(private modalService: NgbModal, public activeModal: NgbActiveModal, 
-    private clienteservice: ClienteService, private formBuilder: FormBuilder) {}
+  constructor(
+    private modalService: NgbModal, 
+    public activeModal: NgbActiveModal, 
+    private clienteservice: ClienteService, 
+    private formBuilder: FormBuilder,
+    private loginServce: LoginService,
+    ) {}
 
     cliente: Cliente;
+    login: Login;
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -33,14 +41,23 @@ export class RegistrarseComponent implements OnInit {
       fechaNacimiento:  ['', Validators.required], 
       correo: [''],
       telefono:  [''],
+
+      usuario: ['', Validators.required],
+      clave: ['', Validators.required],
     });
 
+    this.login = new Login();
     this.cliente = new Cliente();
   }
 
   add() {
     console.log(this.cliente);
     this.clienteservice.add(this.cliente).subscribe();
+
+    this.login.identificacion=this.cliente.identificacion;
+    this.login.rol="CLIENTE";
+
+    this.loginServce.addLogin(this.login).subscribe();
     this.onReset();
   }
 
