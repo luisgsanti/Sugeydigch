@@ -18,6 +18,7 @@ import { Servicio} from '../../models/servicio'
 import { ServicioService} from '../../services/servicio.service'
 import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 
+
 @Component({
   selector: 'app-nueva-reserva-cliente',
   templateUrl: './nueva-reserva-cliente.component.html',
@@ -148,7 +149,9 @@ export class NuevaReservaClienteComponent implements OnInit {
   }
 
   ModalHabitaciones(){
-    const modalRef =  this.modalService.open(ModalHabitacionesComponent, { size: 'lg' });
+    this.modalService.open(ModalHabitacionesComponent, { size: 'lg' });
   }
+
+  
 
 }

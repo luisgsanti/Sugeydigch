@@ -42,13 +42,22 @@ export class LoginService {
     catchError(this.handleError<Login>(`Usuario no valido`))
     );
   }
+
+  getLogin(id: string): Observable<Login>
+  {
+    const url = `${this.baseUrl + 'api/Login'}/Get/${id}`;
+    return this.http.get<Login>(url).pipe(
+    tap(),
+    catchError(this.handleError<Login>(`Usuario no valido`))
+    );
+  }
   
 
   update (Login: Login): Observable<any> {
     const url =
     `${this.baseUrl + 'api/Login'}/${Login.id}`;
     return this.http.put(url, Login, httpOptions).pipe(
-    tap(_ => this.log(`updated Login id=${Login.id}`)),
+    tap(/*_ => this.log(`updated Login id=${Login.id}`)*/),
     catchError(this.handleError<any>('Login'))
     );
   }

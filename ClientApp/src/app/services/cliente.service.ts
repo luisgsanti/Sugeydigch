@@ -54,7 +54,7 @@ export class ClienteService {
    update (cliente: Cliente): Observable<any> {
     const url =`${this.baseUrl + 'api/Cliente'}/${cliente.id}`;
     return this.http.put(url, cliente, httpOptions).pipe(
-    tap(_ => this.log(`updated cliente identificacion=${cliente.id}`)),
+    tap(_ => this.log(`DATOS MODIFICADOS CORRECTAMENTE`)),
     catchError(this.handleError<any>('cliente'))
     );
   }
@@ -67,7 +67,7 @@ export class ClienteService {
     `${this.baseUrl + 'api/Cliente'}/${id}`;
     
     return this.http.delete<Cliente>(url, httpOptions).pipe(
-    tap(_ => this.log(`deleted cliente id=${id}`)),
+    tap(_ => this.log(`CLIENTE DESACTIVADO`)),
     catchError(this.handleError<Cliente>('deletecliente'))
     );
   }
